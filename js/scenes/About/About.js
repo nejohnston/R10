@@ -6,10 +6,10 @@ import styles from "./styles";
 
 const About = ({ data }) => (
   <View>
-    <View>
+    <View style={styles.headerView}>
       <Image
-        source={require("../../assets/images/r10_logo.png")}
         style={styles.headerImage}
+        source={require("../../assets/images/r10_logo.png")}
       />
     </View>
     {data.map(data => <View />)}
