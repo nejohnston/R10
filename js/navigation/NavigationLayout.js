@@ -6,42 +6,32 @@ import {
   TabNavigationItem as TabItem
 } from "@expo/ex-navigation";
 
+// import Icon from "react-native-vector-icons/Ionicons";
+
+import Router from "./routes";
+
 class NavigationLayout extends Component {
   render() {
     return (
       // Put your tab bar / tab items / stack navs here~~~~~~
-      <TabNavigation id="main" navigatorUID="main" initialTab="home">
+      <TabNavigation id="main" navigatorUID="main" initialTab="about">
         <TabItem
-          id="home"
-          title="Home"
-          selectedStyle={styles.selectedTab}
+          id="about"
+          title="About"
           renderIcon={isSelected => (
-            <Image source={require("./assets/images/home.png")} />
+            <Icon name="ios-calendar" size={30} color="#4F8EF7" />
           )}
         >
           <StackNavigation
-            id="home"
-            navigatorUID="home"
+            id="about"
+            navigatorUID="about"
             initialRoute={Router.getRoute("about")}
           />
         </TabItem>
-
-        <TabItem id="posts" title="Posts" selectedStyle={styles.selectedTab}>
-          {" "}
-          <StackNavigation id="posts" initialRoute={Router.getRoute("posts")} />
-        </TabItem>
-
-        <TabItem
-          id="profile"
-          title="Profile"
-          selectedStyle={styles.selectedTab}
-          renderIcon={isSelected => (
-            <Image source={require("./assets/images/profile.png")} />
-          )}
-        >
+        <TabItem id="schedule" title="Schedule">
           <StackNavigation
-            id="profile"
-            initialRoute={Router.getRoute("profile")}
+            id="schedule"
+            initialRoute={Router.getRoute("schedule")}
           />
         </TabItem>
       </TabNavigation>
