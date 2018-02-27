@@ -20,7 +20,7 @@ class AboutContainer extends Component {
   render() {
     console.log(this.state.data);
 
-    return <About data={data} />;
+    return <About data={this.state.data} />;
   }
 }
 
