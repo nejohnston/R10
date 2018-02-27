@@ -8,6 +8,9 @@ class AboutContainer extends Component {
     super();
     this.state = {};
   }
+
+  // fetch loading true, data empty array component did mount setstate to loading false
+
   render() {
     return <About />;
   }
