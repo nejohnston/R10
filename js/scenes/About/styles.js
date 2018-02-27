@@ -1,3 +1,13 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
-export const styles = StyleSheet.create({});
+const { height, width } = Dimensions.get("window");
+
+const styles = StyleSheet.create({
+  headerImage: {
+    width: width,
+    height: height / 4,
+    borderWidth: 2
+  }
+});
+
+export default styles;
