@@ -1,8 +1,6 @@
 import { combineReducers } from "redux";
 import { NavigationReducer } from "@expo/ex-navigation";
 
-const rootReducer = combineReducers({
+export default combineReducers({
   navigation: NavigationReducer
 });
-
-export default rootReducer;
