@@ -29,8 +29,8 @@ const About = ({ data }) => (
     </Text>
     <Text style={styles.openingTitle}>Code Of Conduct</Text>
 
-    {data.map(data => (
-      <View>
+    {data.map((data, i) => (
+      <View key={i}>
         <Text style={styles.descriptionTitle}>{data.title}</Text>
         <Text style={styles.bodyText}>{data.description}</Text>
       </View>

@@ -6,6 +6,12 @@ const styles = StyleSheet.create({
   container: {
     marginHorizontal: 20
   },
+  activityIndicator: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    marginVertical: height / 2
+  },
   headerView: {
     height: height / 5,
     borderBottomWidth: 0.5,
