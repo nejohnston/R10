@@ -6,7 +6,7 @@ import About from "./About";
 class AboutContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = { data: [] };
+    this.state = { data: [], loading: true };
   }
 
   // fetch loading true, data empty array component did mount setstate to loading false

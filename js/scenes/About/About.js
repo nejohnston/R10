@@ -35,6 +35,9 @@ const About = ({ data }) => (
         <Text style={styles.bodyText}>{data.description}</Text>
       </View>
     ))}
+    <View style={styles.footer}>
+      <Text style={styles.footerText}>&copy;Red Academy 2018</Text>
+    </View>
   </ScrollView>
 );
 

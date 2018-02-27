@@ -26,6 +26,15 @@ const styles = StyleSheet.create({
     color: "#C8A2C8",
     marginBottom: 20,
     fontSize: 16
+  },
+  footer: {
+    borderTopWidth: 0.5
+  },
+  footerText: {
+    fontSize: 16,
+    lineHeight: 20,
+    marginVertical: 20,
+    letterSpacing: 1.5
   }
 });
 
