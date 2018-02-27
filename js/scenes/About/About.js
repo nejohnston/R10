@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Platform, StyleSheet, Text, View, Image } from "react-native";
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ScrollView
+} from "react-native";
 
 import styles from "./styles";
 
 const About = ({ data }) => (
-  <View>
+  <ScrollView style={styles.container}>
     <View style={styles.headerView}>
       <Image
         style={styles.headerImage}
@@ -20,7 +27,7 @@ const About = ({ data }) => (
       The R10 conference will take place on the North Pole, Mrs. Claus will be
       hosting.
     </Text>
-    <Text style={styles.openingTitle}>Date & Venue</Text>
+    <Text style={styles.openingTitle}>Code Of Conduct</Text>
 
     {data.map(data => (
       <View>
@@ -28,7 +35,7 @@ const About = ({ data }) => (
         <Text style={styles.bodyText}>{data.description}</Text>
       </View>
     ))}
-  </View>
+  </ScrollView>
 );
 
 export default About;
