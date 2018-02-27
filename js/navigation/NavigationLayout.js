@@ -6,21 +6,35 @@ import {
   TabNavigationItem as TabItem
 } from "@expo/ex-navigation";
 
-// import Icon from "react-native-vector-icons/Ionicons";
+import { Text } from "react-native";
+
+import Icon from "react-native-vector-icons/Ionicons";
 
 import Router from "./routes";
+import { colors } from "../config/styles";
+const { black, white, mediumGrey } = colors;
 
 class NavigationLayout extends Component {
   render() {
     return (
       // Put your tab bar / tab items / stack navs here~~~~~~
-      <TabNavigation id="main" navigatorUID="main" initialTab="about">
+      <TabNavigation id="main" navigatorUID="main" initialTab="schedule">
+        <TabItem
+          id="schedule"
+          title="Schedule"
+          renderTitle={this.renderTitle}
+          renderIcon={isSelected => this.renderIcon(isSelected, "ios-calendar")}
+        >
+          <StackNavigation
+            id="schedule"
+            initialRoute={Router.getRoute("schedule")}
+          />
+        </TabItem>
         <TabItem
           id="about"
           title="About"
-          renderIcon={isSelected => (
-            <Icon name="ios-calendar" size={30} color="#4F8EF7" />
-          )}
+          renderTitle={this.renderTitle}
+          renderIcon={isSelected => this.renderIcon(isSelected, "ios-at")}
         >
           <StackNavigation
             id="about"
@@ -28,13 +42,21 @@ class NavigationLayout extends Component {
             initialRoute={Router.getRoute("about")}
           />
         </TabItem>
-        <TabItem id="schedule" title="Schedule">
-          <StackNavigation
-            id="schedule"
-            initialRoute={Router.getRoute("schedule")}
-          />
-        </TabItem>
       </TabNavigation>
+    );
+  }
+  renderTitle(isSelected, title) {
+    // selectively set title style (color) to be white if selected, otherwise grey
+    return (
+      <Text style={{ color: isSelected ? white : mediumGrey }}>{title}</Text>
+    );
+  }
+  renderIcon(isSelected, iconName) {
+    return (
+      <Icon
+        name={iconName}
+        style={{ color: isSelected ? white : mediumGrey }}
+      />
     );
   }
 }
