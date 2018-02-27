@@ -10,7 +10,7 @@ class AboutContainer extends Component {
   }
 
   // fetch loading true, data empty array component did mount setstate to loading false
-
+  componentDidMount() {}
   render() {
     return <About />;
   }
