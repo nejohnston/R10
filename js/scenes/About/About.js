@@ -7,3 +7,5 @@ const About = () => (
     <Text>I am on the about scene</Text>
   </View>
 );
+
+export default About;

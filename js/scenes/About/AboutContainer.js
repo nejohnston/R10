@@ -12,3 +12,5 @@ class AboutContainer extends Component {
     return <About />;
   }
 }
+
+export default AboutContainer;
