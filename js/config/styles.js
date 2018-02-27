@@ -1,13 +1,13 @@
-import { lightMont } from "../assets/fonts/Montserrat-Light.ttf";
-import { regMont } from "../assets/fonts/Montserrat-Regular.ttf";
-
 export const colors = {
   black: "#000000",
   nearBlack: "#111111",
-  mediumGrey: "#999999"
+  mediumGrey: "#999999",
+  lightGrey: "e6e6e6",
+  blue: "8797D6",
+  purple: "9963ea"
 };
 
-export const fonts = {
-  lightMont: lightMont,
-  regMont: regMont
+export const typography = {
+  lightMain: "Montserrat-Light",
+  fontMain: "Montserrat-Regular"
 };

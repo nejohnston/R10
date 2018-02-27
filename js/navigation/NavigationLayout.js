@@ -11,8 +11,9 @@ import { Text } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
 import Router from "./routes";
-import { colors } from "../config/styles";
+import { colors, typography } from "../config/styles";
 const { black, white, mediumGrey } = colors;
+const {fontMain, lightMain}
 
 class NavigationLayout extends Component {
   render() {
@@ -60,5 +61,9 @@ class NavigationLayout extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  fontFamily: fontMain
+});
 
 export default NavigationLayout;
