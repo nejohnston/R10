@@ -6,18 +6,16 @@ import { View, ActivityIndicator } from "react-native";
 import About from "./About";
 import styles from "./styles";
 
-import {
-  createRouter,
-  NavigationProvider,
-  StackNavigation
-} from "@expo/ex-navigation";
-
 class AboutContainer extends Component {
   constructor(props) {
     super(props);
     this.state = { data: [], loading: true };
   }
-
+  static route = {
+    navigationBar: {
+      title: "About"
+    }
+  };
   // fetch loading true, data empty array component did mount setstate to loading false
   componentDidMount() {
     fetch("https://r10app-95fea.firebaseio.com/code_of_conduct.json")
