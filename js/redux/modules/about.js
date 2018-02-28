@@ -1,5 +1,4 @@
-const ABOUT_DATA_ENDPOINT =
-  "https://r10app-95fea.firebaseio.com/code_of_conduct.json";
+import aboutEndpoint from "../../config/endpoints";
 
 // ACTIONS
 const GET_ABOUT_LOADING = "GET_ABOUT_LOADING";
@@ -26,7 +25,7 @@ export const getAboutError = error => ({
 export const fetchAboutInfo = () => dispatch => {
   dispatch(getAboutLoading());
 
-  return fetch(ABOUT_DATA_ENDPOINT)
+  return fetch(aboutEndpoint)
     .then(res => res.json())
     .then(data => {
       dispatch(getAbout(data));
