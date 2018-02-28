@@ -1,13 +1,14 @@
 import Realm from "realm";
 
-const FavesSchema = {
-  name: "faves",
+const FaveSchema = {
+  name: "Fave",
   primaryKey: "id",
   properties: {
-    id: "string",
+    fave_id: "string",
     faved_on: "data"
   }
 };
 
-const realm = new Realm({ schema: [FavesSchema] });
+const realm = new Realm({ schema: [FaveSchema] });
+
 export default realm;
