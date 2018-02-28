@@ -11,17 +11,11 @@ import {
 } from "react-native";
 
 import styles from "./styles";
-// import { goToSpeaker } from "../../config/navigationHelpers";
-
-const goToSpeaker = speakerData => {
-  Store.dispatch(
-    NavigationActions.push("root", Router.getRoute("speaker", { speakerData }))
-  );
-};
+import { goToSpeaker } from "../../config/navigationHelpers";
 
 const Session = ({ data }) => (
   <View>
-    <TouchableHighlight onPress={() => goToSpeaker()}>
+    <TouchableHighlight onPress={() => goToSpeaker("root", { data })}>
       <Text>Session</Text>
     </TouchableHighlight>
   </View>
