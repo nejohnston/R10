@@ -4,11 +4,12 @@ const GET_ABOUT = "GET_ABOUT";
 const GET_ABOUT_ERROR = "GET_ABOUT_ERROR";
 
 // ACTION CREATOR
-export const getAboutLoading = () => ({
+export const getAboutLoading = isLoading => ({
   type: GET_ABOUT_LOADING
 });
-export const getAbout = () => ({
-  type: GET_ABOUT
+export const getAbout = aboutData => ({
+  type: GET_ABOUT,
+  payload: aboutData
 });
 export const getAboutError = error => ({
   type: GET_ABOUT_ERROR,
@@ -18,22 +19,45 @@ export const getAboutError = error => ({
 // ASYNC ACTION CREATOR
 
 export const fetchItemsAndUsers = () => dispatch => {
-  dispatch(getItemsLoading());
+  dispatch(getAboutLoading());
 
-  return Promise.all(
-    ["http://localhost:4000/items", "http://localhost:4000/users/"].map(url =>
-      fetch(url).then(response => response.json())
-    )
-  )
-    .then(json => {
-      const [itemsData, users] = json;
-      const itemsWithOwners = itemsData.map(item => {
-        const itemowner = users.filter(user => user.id === item.itemowner);
-        item.itemowner = itemowner[0];
-        return item;
-      });
+  return Promise(
+    fetch("https://r10app-95fea.firebaseio.com/code_of_conduct.json")
+      .then(res => res.json())
+      .then(data => this.setState({ data, loading: false }))
+      .catch(err => console.log(err))
+  );
+};
+// REDUCER
 
-      dispatch(getItems(itemsWithOwners));
-    })
-    .catch(error => dispatch(getItemsError(error)));
+export default (
+  state = {
+    isLoading: false,
+    itemsData: [],
+    itemTags: [],
+    error: ""
+  },
+  action
+) => {
+  switch (action.type) {
+    case GET_ABOUT_LOADING: {
+      return { ...state, isLoading: true, error: "" };
+    }
+    case GET_ABOUT: {
+      return {
+        ...state,
+        isLoading: false,
+        itemsData: action.payload,
+        error: ""
+      };
+    }
+    case GET_ITEMS_ERROR: {
+      return { ...state, isLoading: false, error: action.payload };
+    }
+    case GET_ITEM_TAG: {
+      return { ...state, itemTags: action.payload };
+    }
+    default:
+      return state;
+  }
 };
