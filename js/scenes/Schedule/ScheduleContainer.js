@@ -5,6 +5,7 @@ import store from "../../redux/store";
 
 import Schedule from "./Schedule";
 import { fetchScheduleInfo } from "../../redux/modules/schedule";
+import { formatSessionData } from "../../../helpers";
 
 class ScheduleContainer extends Component {
   constructor(props) {
@@ -20,8 +21,9 @@ class ScheduleContainer extends Component {
   componentDidMount() {
     this.props.dispatch(fetchScheduleInfo());
   }
+
   render() {
-    return <Schedule sessions={this.props.scheduleData} />;
+    return <Schedule data={this.props.scheduleData} />;
   }
 }
 const mapStateToProps = state => ({

@@ -9,23 +9,25 @@ import {
   ScrollView,
   SectionList
 } from "react-native";
-import { formatSessionData } from "../../../helpers";
 import styles from "./styles";
+import moment from "moment";
+import { formatSessionData } from "../../../helpers";
 
-const sectionCard = () => {
-  <View>
-    <Text>{item.title}</Text>
-    <Text>{item.location}</Text>
-  </View>;
-};
-
-const Schedule = ({ sessions }) => (
+const Schedule = ({ data }) => (
   <View>
     <SectionList
-      sections={sessions}
-      renderItem={({ item }) => sectionCard}
-      renderSectionHeader={({ section }) => sectionCard}
+      sections={data}
+      renderItem={({ item }) => (
+        <View>
+          <Text>{item.title}</Text>
+          <Text>{item.location}</Text>
+        </View>
+      )}
+      renderSectionHeader={({ section }) => (
+        <Text>{moment.unix(section.title).format("LT")}</Text>
+      )}
       keyExtractor={(item, index) => index}
+      stickySectionHeadersEnabled={false}
     />
   </View>
 );
