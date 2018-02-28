@@ -19,25 +19,23 @@ class AboutContainer extends Component {
   };
   // fetch loading true, data empty array component did mount setstate to loading false
   componentDidMount() {
-    this.props.dispatch(fetchAboutInfo);
+    this.props.dispatch(fetchAboutInfo());
   }
 
   render() {
-    console.log(this.state.data);
-
-    return this.state.loading ? (
+    return this.props.loading ? (
       <View>
         <ActivityIndicator size="large" style={styles.activityIndicator} />
       </View>
     ) : (
-      <About data={this.state.data} />
+      <About data={this.props.aboutData} />
     );
   }
 }
 
 const mapStateToProps = state => ({
   isLoading: state.about.isLoading,
-  aboutData: state.about.itemsData,
+  aboutData: state.about.aboutData,
   error: state.about.error
 });
 
