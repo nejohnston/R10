@@ -3,14 +3,17 @@ import PropTypes from "prop-types";
 
 import Session from "./Session";
 
-class ScheduleContainer extends Component {
+class SessionContainer extends Component {
   constructor(props) {
     super(props);
   }
 
   static route = {
     navigationBar: {
-      title: "Session"
+      // title: "Session"
+      title(sessionData) {
+        return { sessionData };
+      }
     }
   };
 
@@ -19,4 +22,4 @@ class ScheduleContainer extends Component {
   }
 }
 
-export default Session;
+export default SessionContainer;

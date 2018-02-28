@@ -26,6 +26,7 @@ class ScheduleContainer extends Component {
     return <Schedule data={this.props.scheduleData} />;
   }
 }
+
 const mapStateToProps = state => ({
   isLoading: state.schedule.isLoading,
   scheduleData: state.schedule.scheduleData,
