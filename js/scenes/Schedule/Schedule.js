@@ -11,9 +11,14 @@ import {
 
 import styles from "./styles";
 
-const Schedule = () => (
+const Schedule = ({ sessions }) => (
   <View>
-    <Text>Schedule</Text>
+    {sessions.map((data, i) => (
+      <View key={i}>
+        <Text style={styles.descriptionTitle}>{data.title}</Text>
+        <Text style={styles.bodyText}>{data.description}</Text>
+      </View>
+    ))}
   </View>
 );
 

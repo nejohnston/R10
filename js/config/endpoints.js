@@ -1,4 +1,4 @@
-export const sessionsEndpoint =
+export const SCHEDULE_ENDPOINT =
   "https://r10app-95fea.firebaseio.com/sessions.json";
 export const speakersEndpoint =
   "https://r10app-95fea.firebaseio.com/speakers.json";
