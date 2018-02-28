@@ -23,7 +23,7 @@ class AboutContainer extends Component {
   }
 
   render() {
-    return this.props.loading ? (
+    return this.props.isLoading ? (
       <View>
         <ActivityIndicator size="large" style={styles.activityIndicator} />
       </View>
