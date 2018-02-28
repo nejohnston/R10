@@ -1,17 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  ScrollView,
-  SectionList
-} from "react-native";
+import { Text, View, SectionList, TouchableHighlight } from "react-native";
 import styles from "./styles";
 import moment from "moment";
-import { formatSessionData } from "../../../helpers";
 
 goToSession = (currentNavigatorUID, sessionData) => {
   Store.dispatch(
