@@ -6,19 +6,27 @@ import {
   Text,
   View,
   Image,
-  ScrollView
+  ScrollView,
+  SectionList
 } from "react-native";
-
+import { formatSessionData } from "../../../helpers";
 import styles from "./styles";
+
+const sectionCard = () => {
+  <View>
+    <Text>{item.title}</Text>
+    <Text>{item.location}</Text>
+  </View>;
+};
 
 const Schedule = ({ sessions }) => (
   <View>
-    {sessions.map((data, i) => (
-      <View key={i}>
-        <Text style={styles.descriptionTitle}>{data.title}</Text>
-        <Text style={styles.bodyText}>{data.description}</Text>
-      </View>
-    ))}
+    <SectionList
+      sections={sessions}
+      renderItem={({ item }) => sectionCard}
+      renderSectionHeader={({ section }) => sectionCard}
+      keyExtractor={(item, index) => index}
+    />
   </View>
 );
 

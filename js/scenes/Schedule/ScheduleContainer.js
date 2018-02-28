@@ -19,7 +19,6 @@ class ScheduleContainer extends Component {
 
   componentDidMount() {
     this.props.dispatch(fetchScheduleInfo());
-    console.log(this.props.scheduleData);
   }
   render() {
     return <Schedule sessions={this.props.scheduleData} />;
