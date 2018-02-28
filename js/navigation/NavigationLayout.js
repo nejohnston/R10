@@ -6,14 +6,14 @@ import {
   TabNavigationItem as TabItem
 } from "@expo/ex-navigation";
 
-import { Text } from "react-native";
+import { Text, StyleSheet } from "react-native";
 
 import Icon from "react-native-vector-icons/Ionicons";
 
 import Router from "./routes";
 import { colors, typography } from "../config/styles";
 const { black, white, mediumGrey } = colors;
-const {fontMain, lightMain}
+const { fontMain, lightMain } = typography;
 
 class NavigationLayout extends Component {
   render() {
@@ -63,7 +63,7 @@ class NavigationLayout extends Component {
 }
 
 const styles = StyleSheet.create({
-  fontFamily: fontMain
+  // fontStyle: fontMain
 });
 
 export default NavigationLayout;

@@ -1,3 +1,6 @@
+const ABOUT_DATA_ENDPOINT =
+  "https://r10app-95fea.firebaseio.com/code_of_conduct.json";
+
 // ACTIONS
 const GET_ABOUT_LOADING = "GET_ABOUT_LOADING";
 const GET_ABOUT = "GET_ABOUT";
@@ -7,10 +10,12 @@ const GET_ABOUT_ERROR = "GET_ABOUT_ERROR";
 export const getAboutLoading = isLoading => ({
   type: GET_ABOUT_LOADING
 });
+
 export const getAbout = aboutData => ({
   type: GET_ABOUT,
   payload: aboutData
 });
+
 export const getAboutError = error => ({
   type: GET_ABOUT_ERROR,
   payload: error
@@ -18,23 +23,22 @@ export const getAboutError = error => ({
 
 // ASYNC ACTION CREATOR
 
-export const fetchItemsAndUsers = () => dispatch => {
+export const fetchAboutInfo = () => dispatch => {
   dispatch(getAboutLoading());
 
-  return Promise(
-    fetch("https://r10app-95fea.firebaseio.com/code_of_conduct.json")
-      .then(res => res.json())
-      .then(data => this.setState({ data, loading: false }))
-      .catch(err => console.log(err))
-  );
+  return fetch(ABOUT_DATA_ENDPOINT)
+    .then(res => res.json())
+    .then(data => {
+      dispatch(getAbout(data));
+    })
+    .catch(err => dispatch(getAboutError(error)));
 };
 // REDUCER
 
 export default (
   state = {
     isLoading: false,
-    itemsData: [],
-    itemTags: [],
+    aboutData: [],
     error: ""
   },
   action
@@ -47,15 +51,12 @@ export default (
       return {
         ...state,
         isLoading: false,
-        itemsData: action.payload,
+        aboutData: action.payload,
         error: ""
       };
     }
-    case GET_ITEMS_ERROR: {
+    case GET_ABOUT_ERROR: {
       return { ...state, isLoading: false, error: action.payload };
-    }
-    case GET_ITEM_TAG: {
-      return { ...state, itemTags: action.payload };
     }
     default:
       return state;

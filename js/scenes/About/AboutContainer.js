@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
+import { connect } from "react-redux";
+import store from "../../redux/store";
 import { View, ActivityIndicator } from "react-native";
 
 import About from "./About";
 import styles from "./styles";
+import { fetchAboutInfo } from "../../redux/modules/about";
 
 class AboutContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = { data: [], loading: true };
   }
   static route = {
     navigationBar: {
@@ -18,10 +19,7 @@ class AboutContainer extends Component {
   };
   // fetch loading true, data empty array component did mount setstate to loading false
   componentDidMount() {
-    fetch("https://r10app-95fea.firebaseio.com/code_of_conduct.json")
-      .then(res => res.json())
-      .then(data => this.setState({ data, loading: false }))
-      .catch(err => console.log(err));
+    this.props.dispatch(fetchAboutInfo);
   }
 
   render() {
@@ -37,4 +35,10 @@ class AboutContainer extends Component {
   }
 }
 
-export default AboutContainer;
+const mapStateToProps = state => ({
+  isLoading: state.about.isLoading,
+  aboutData: state.about.itemsData,
+  error: state.about.error
+});
+
+export default connect(mapStateToProps)(AboutContainer);
