@@ -1,5 +1,5 @@
 import SCHEDULE_ENDPOINT from "../../config/endpoints";
-import { formatSessionData } from "../../../helpers";
+import { formatSessionData } from "../../config/helpers";
 // ACTIONS
 const GET_SCHEDULE_LOADING = "GET_SCHEDULE_LOADING";
 const GET_SCHEDULE_SESSIONS = "GET_SCHEDULE";
@@ -29,7 +29,6 @@ export const fetchScheduleInfo = () => dispatch => {
     .then(res => res.json())
     .then(data => {
       dispatch(getScheduleSessions(formatSessionData(data)));
-      console.log(data);
     })
     .catch(error => dispatch(getScheduleError(error)));
 };

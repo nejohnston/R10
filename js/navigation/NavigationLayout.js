@@ -28,6 +28,7 @@ class NavigationLayout extends Component {
         >
           <StackNavigation
             id="schedule"
+            navigatorUID="schedule"
             initialRoute={Router.getRoute("schedule")}
           />
         </TabItem>

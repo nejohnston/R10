@@ -10,15 +10,12 @@ class SessionContainer extends Component {
 
   static route = {
     navigationBar: {
-      // title: "Session"
-      title(sessionData) {
-        return { sessionData };
-      }
+      title: "Session"
     }
   };
 
   render() {
-    return <Session />;
+    return <Session data={this.props.route.params.data} />;
   }
 }
 

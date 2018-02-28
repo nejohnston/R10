@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import store from "../../redux/store";
 
 import Schedule from "./Schedule";
 import { fetchScheduleInfo } from "../../redux/modules/schedule";
-import { formatSessionData } from "../../../helpers";
+import { formatSessionData } from "../../config/helpers";
 
 class ScheduleContainer extends Component {
   constructor(props) {
