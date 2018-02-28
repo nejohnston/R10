@@ -13,7 +13,7 @@ import styles from "./styles";
 
 const Schedule = () => (
   <View>
-    <Text>asdfasfd</Text>
+    <Text>Schedule</Text>
   </View>
 );
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import Schedule from "./Schedule";
+import Session from "./Session";
 
 class ScheduleContainer extends Component {
   constructor(props) {
@@ -10,13 +10,13 @@ class ScheduleContainer extends Component {
 
   static route = {
     navigationBar: {
-      title: "Schedule"
+      title: "Session"
     }
   };
 
   render() {
-    return <Schedule />;
+    return <Session />;
   }
 }
 
-export default ScheduleContainer;
+export default Session;
