@@ -5,18 +5,11 @@ import Router from "../../navigation/routes";
 import { NavigationActions } from "@expo/ex-navigation";
 import Store from "../../redux/store";
 
+import { goToSession } from "../../config/navigationHelpers";
+
 import { Text, View, SectionList, TouchableHighlight } from "react-native";
 import styles from "./styles";
 import moment from "moment";
-
-const goToSession = (currentNavigatorUID, data) => {
-  Store.dispatch(
-    NavigationActions.push(
-      currentNavigatorUID,
-      Router.getRoute("session", { data })
-    )
-  );
-};
 
 const Schedule = ({ data }) => (
   <View>

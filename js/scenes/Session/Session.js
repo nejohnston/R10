@@ -6,14 +6,24 @@ import {
   Text,
   View,
   Image,
-  ScrollView
+  ScrollView,
+  TouchableHighlight
 } from "react-native";
 
 import styles from "./styles";
+// import { goToSpeaker } from "../../config/navigationHelpers";
 
-const Session = () => (
+const goToSpeaker = speakerData => {
+  Store.dispatch(
+    NavigationActions.push("root", Router.getRoute("speaker", { speakerData }))
+  );
+};
+
+const Session = ({ data }) => (
   <View>
-    <Text>Session</Text>
+    <TouchableHighlight onPress={() => goToSpeaker()}>
+      <Text>Session</Text>
+    </TouchableHighlight>
   </View>
 );
 
