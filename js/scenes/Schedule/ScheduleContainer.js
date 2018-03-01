@@ -21,7 +21,7 @@ class ScheduleContainer extends Component {
   }
 
   render() {
-    return <Schedule data={this.props.sessionData} />;
+    return <Schedule sessionData={this.props.sessionData} />;
   }
 }
 

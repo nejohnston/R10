@@ -11,10 +11,10 @@ import { Text, View, SectionList, TouchableHighlight } from "react-native";
 import styles from "./styles";
 import moment from "moment";
 
-const Schedule = ({ data }) => (
+const Schedule = ({ sessionData }) => (
   <View>
     <SectionList
-      sections={data}
+      sections={sessionData}
       renderItem={({ item }) => (
         <TouchableHighlight onPress={() => goToSession("schedule", item)}>
           <View>

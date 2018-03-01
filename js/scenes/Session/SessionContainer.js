@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import Session from "./Session";
 import { fetchSpeaker } from "../../redux/modules/speaker";
+import { connect } from "react-redux";
 
 class SessionContainer extends Component {
   constructor(props) {
@@ -17,11 +18,23 @@ class SessionContainer extends Component {
 
   componentDidMount() {
     this.props.dispatch(fetchSpeaker());
+    console.log(this.props.speakerData);
   }
 
   render() {
-    return <Session data={this.props.route.params.data} />;
+    return (
+      <Session
+        speakerData={this.props.speakerData}
+        sessionData={this.props.route.params.sessionData}
+      />
+    );
   }
 }
 
-export default SessionContainer;
+const mapStateToProps = state => ({
+  isLoading: state.speaker.isLoading,
+  speakerData: state.speaker.speakerData,
+  error: state.speaker.error
+});
+
+export default connect(mapStateToProps)(SessionContainer);

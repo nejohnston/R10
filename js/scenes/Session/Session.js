@@ -5,10 +5,10 @@ import { Text, View, TouchableHighlight } from "react-native";
 import styles from "./styles";
 import { goToSpeaker } from "../../config/navigationHelpers";
 
-const Session = ({ data }) => (
+const Session = sessionData => (
   <View>
-    <TouchableHighlight onPress={() => goToSpeaker(data)}>
-      <Text>{data.description}</Text>
+    <TouchableHighlight onPress={() => goToSpeaker(sessionData)}>
+      <Text>{sessionData.description}</Text>
     </TouchableHighlight>
   </View>
 );

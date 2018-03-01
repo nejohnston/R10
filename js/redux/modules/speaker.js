@@ -6,13 +6,13 @@ const GET_SPEAKER = "GET_ABOUT";
 const GET_SPEAKER_ERROR = "GET_ABOUT_ERROR";
 
 // ACTION CREATOR
-export const getSpeakerLoading = isLoading => ({
+export const getSpeakerLoading = () => ({
   type: GET_SPEAKER_LOADING
 });
 
-export const getSpeaker = aboutData => ({
+export const getSpeaker = speakerData => ({
   type: GET_SPEAKER,
-  payload: aboutData
+  payload: speakerData
 });
 
 export const getSpeakerError = error => ({
@@ -39,7 +39,7 @@ export const fetchSpeaker = () => dispatch => {
 export default (
   state = {
     isLoading: false,
-    speakerData: {},
+    speakerData: [],
     error: ""
   },
   action
