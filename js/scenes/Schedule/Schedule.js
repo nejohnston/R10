@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { goToSession } from "../../config/navigationHelpers";
+import { goToSession } from "../../config/navHelpers";
 
 import { Text, View, SectionList, TouchableHighlight } from "react-native";
 import styles from "./styles";

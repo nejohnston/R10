@@ -4,7 +4,7 @@ import { Text, View, TouchableHighlight } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
 import styles from "./styles";
-import { goToSpeaker } from "../../config/navigationHelpers";
+import { goToSpeaker } from "../../config/navHelpers";
 import speaker from "../../redux/modules/speaker";
 import { heartIcon } from "../../config/platformHelpers";
 import { colors } from "../../config/styles";
