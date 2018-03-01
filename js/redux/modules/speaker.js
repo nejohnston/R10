@@ -1,4 +1,5 @@
 import SINGLE_SPEAKER_ENDPOINT from "../../config/endpoints";
+import { formatDataObject } from "../../config/helpers";
 // ACTIONS
 const GET_SPEAKER_LOADING = "GET_ABOUT_LOADING";
 const GET_SPEAKER = "GET_ABOUT";
@@ -48,10 +49,11 @@ export default (
       return { ...state, isLoading: true, error: "" };
     }
     case GET_SPEAKER: {
+      const formattedSpeakerData = formatDataObject(action.payload);
       return {
         ...state,
         isLoading: false,
-        speakerData: action.payload,
+        speakerData: formattedSpeakerData,
         error: ""
       };
     }

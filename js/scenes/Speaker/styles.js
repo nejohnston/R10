@@ -5,8 +5,8 @@ const { mediumGrey, black, white } = colors;
 const { height, width } = Dimensions;
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "black"
+    flex: 1
+    // backgroundColor: "black"
   },
   header: {
     paddingTop: 30,

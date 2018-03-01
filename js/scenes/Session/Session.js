@@ -8,7 +8,7 @@ import speaker from "../../redux/modules/speaker";
 
 const Session = ({ data, speakerData }) => (
   <View>
-    <TouchableHighlight onPress={() => goToSpeaker(data, speakerData)}>
+    <TouchableHighlight onPress={() => goToSpeaker(speakerData)}>
       <Text>{data.description}</Text>
     </TouchableHighlight>
   </View>

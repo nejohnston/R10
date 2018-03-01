@@ -28,7 +28,7 @@ export const fetchScheduleInfo = () => dispatch => {
   return fetch("https://r10app-95fea.firebaseio.com/sessions.json")
     .then(res => res.json())
     .then(data => {
-      dispatch(getScheduleSessions(formatSessionData(data)));
+      dispatch(getScheduleSessions(data));
     })
     .catch(error => dispatch(getScheduleError(error)));
 };
@@ -48,10 +48,11 @@ export default (
       return { ...state, isLoading: true, error: "" };
     }
     case GET_SCHEDULE_SESSIONS: {
+      const formattedSchedule = formatSessionData(action.payload);
       return {
         ...state,
         isLoading: false,
-        sessionData: action.payload,
+        sessionData: formattedSchedule,
         error: ""
       };
     }
