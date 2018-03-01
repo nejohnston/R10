@@ -33,7 +33,7 @@ const mapStateToProps = state => ({
 
 ScheduleContainer.propTypes = {
   dispatch: PropTypes.func,
-  sessionData: PropTypes.object
+  sessionData: PropTypes.array
 };
 
 export default connect(mapStateToProps)(ScheduleContainer);

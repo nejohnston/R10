@@ -14,4 +14,8 @@ const Session = ({ data, speakerData }) => (
   </View>
 );
 
+Session.propTypes = {
+  data: PropTypes.object
+};
+
 export default Session;

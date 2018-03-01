@@ -1,13 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  ScrollView
-} from "react-native";
+import { Text, View, Image, ScrollView } from "react-native";
 
 import styles from "./styles";
 
@@ -40,5 +33,10 @@ const About = ({ data }) => (
     </View>
   </ScrollView>
 );
+
+About.propTypes = {
+  data: PropTypes.array,
+  require: PropTypes.func
+};
 
 export default About;

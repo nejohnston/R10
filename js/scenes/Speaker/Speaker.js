@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Icon from "react-native-vector-icons/Ionicons";
 import { Text, View } from "react-native";
@@ -20,5 +20,9 @@ const Speaker = ({ data }) => (
     </View>
   </View>
 );
+
+Speaker.propTypes = {
+  data: PropTypes.object
+};
 
 export default Speaker;

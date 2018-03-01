@@ -1,10 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Router from "../../navigation/routes";
-import { NavigationActions } from "@expo/ex-navigation";
-import Store from "../../redux/store";
-
 import { goToSession } from "../../config/navigationHelpers";
 
 import { Text, View, SectionList, TouchableHighlight } from "react-native";
@@ -33,7 +29,7 @@ const Schedule = ({ data }) => (
 );
 
 Schedule.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.array
 };
 
 export default Schedule;
