@@ -6,7 +6,7 @@ import { goToSession } from "../../config/navHelpers";
 import { Text, View, SectionList, TouchableHighlight } from "react-native";
 import styles from "./styles";
 
-const Schedule = ({ data }) => (
+const Faves = ({ data }) => (
   <View>
     <SectionList
       sections={data}
@@ -24,8 +24,8 @@ const Schedule = ({ data }) => (
   </View>
 );
 
-Schedule.propTypes = {
-  data: PropTypes.array
+Faves.propTypes = {
+  //   data: PropTypes.array
 };
 
-export default Schedule;
+export default Faves;

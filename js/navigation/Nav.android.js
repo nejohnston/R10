@@ -14,6 +14,14 @@ import Icon from "react-native-vector-icons/Ionicons";
 
 import Router from "./routes";
 import { colors, typography } from "../config/styles";
+
+import {
+  calendarIcon,
+  heartIcon,
+  mapIcon,
+  atIcon
+} from "../config/iconHelpers";
+
 const { black, white, mediumGrey } = colors;
 const { fontMain, lightMain } = typography;
 
@@ -26,12 +34,26 @@ class Nav extends Component {
           id="schedule"
           title="Schedule"
           renderTitle={this.renderTitle}
-          renderIcon={isSelected => this.renderIcon(isSelected, "md-calendar")}
+          renderIcon={isSelected =>
+            this.renderIcon(isSelected, { calendarIcon })
+          }
         >
           <StackNavigation
             id="schedule"
             navigatorUID="schedule"
             initialRoute={Router.getRoute("schedule")}
+          />
+        </DrawerNavigationItem>
+        <DrawerNavigationItem
+          id="faves"
+          title="Faves"
+          renderTitle={this.renderTitle}
+          renderIcon={isSelected => this.renderIcon(isSelected, { heartIcon })}
+        >
+          <StackNavigation
+            id="faves"
+            navigatorUID="faves"
+            initialRoute={Router.getRoute("faves")}
           />
         </DrawerNavigationItem>
         <DrawerNavigationItem

@@ -6,7 +6,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 import styles from "./styles";
 import { goToSpeaker } from "../../config/navHelpers";
 import speaker from "../../redux/modules/speaker";
-import { heartIcon } from "../../config/platformHelpers";
+import { heartIcon } from "../../config/iconHelpers";
 import { colors } from "../../config/styles";
 
 const Session = ({ data, speakerData }) => (

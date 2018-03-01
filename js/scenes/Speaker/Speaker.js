@@ -5,7 +5,7 @@ import { Text, View, TouchableHighlight } from "react-native";
 
 import styles from "./styles";
 import { popSpeaker } from "../../config/navHelpers";
-import { closeIcon } from "../../config/platformHelpers";
+import { closeIcon } from "../../config/iconHelpers";
 
 const Speaker = ({ data }) => (
   <View style={styles.container}>

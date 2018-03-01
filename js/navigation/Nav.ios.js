@@ -12,6 +12,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 
 import Router from "./routes";
 import { colors, typography } from "../config/styles";
+import { calendarIcon, atIcon, heartIcon } from "../config/iconHelpers";
 const { black, white, mediumGrey } = colors;
 const { fontMain, lightMain } = typography;
 
@@ -24,7 +25,9 @@ class Nav extends Component {
           id="schedule"
           title="Schedule"
           renderTitle={this.renderTitle}
-          renderIcon={isSelected => this.renderIcon(isSelected, "ios-calendar")}
+          renderIcon={isSelected =>
+            this.renderIcon(isSelected, { calendarIcon })
+          }
         >
           <StackNavigation
             id="schedule"
@@ -36,7 +39,31 @@ class Nav extends Component {
           id="about"
           title="About"
           renderTitle={this.renderTitle}
-          renderIcon={isSelected => this.renderIcon(isSelected, "ios-at")}
+          renderIcon={isSelected => this.renderIcon(isSelected, { atIcon })}
+        >
+          <StackNavigation
+            id="about"
+            navigatorUID="about"
+            initialRoute={Router.getRoute("about")}
+          />
+        </TabItem>
+        <TabItem
+          id="about"
+          title="About"
+          renderTitle={this.renderTitle}
+          renderIcon={isSelected => this.renderIcon(isSelected, { atIcon })}
+        >
+          <StackNavigation
+            id="about"
+            navigatorUID="about"
+            initialRoute={Router.getRoute("about")}
+          />
+        </TabItem>
+        <TabItem
+          id="about"
+          title="About"
+          renderTitle={this.renderTitle}
+          renderIcon={isSelected => this.renderIcon(isSelected, { atIcon })}
         >
           <StackNavigation
             id="about"
