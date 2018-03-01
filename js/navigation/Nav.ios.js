@@ -12,7 +12,12 @@ import Icon from "react-native-vector-icons/Ionicons";
 
 import Router from "./routes";
 import { colors, typography } from "../config/styles";
-import { calendarIcon, atIcon, heartIcon } from "../config/iconHelpers";
+import {
+  scheduleIcon,
+  aboutIcon,
+  faveIcon,
+  mapIcon
+} from "../config/iconHelpers";
 const { black, white, mediumGrey } = colors;
 const { fontMain, lightMain } = typography;
 
@@ -26,7 +31,7 @@ class Nav extends Component {
           title="Schedule"
           renderTitle={this.renderTitle}
           renderIcon={isSelected =>
-            this.renderIcon(isSelected, { calendarIcon })
+            this.renderIcon(isSelected, { scheduleIcon })
           }
         >
           <StackNavigation
@@ -35,35 +40,35 @@ class Nav extends Component {
             initialRoute={Router.getRoute("schedule")}
           />
         </TabItem>
-        <TabItem
-          id="about"
-          title="About"
+        {/* <TabItem
+          id="map"
+          title="Map"
           renderTitle={this.renderTitle}
-          renderIcon={isSelected => this.renderIcon(isSelected, { atIcon })}
+          renderIcon={isSelected => this.renderIcon(isSelected, { mapIcon })}
         >
           <StackNavigation
-            id="about"
-            navigatorUID="about"
-            initialRoute={Router.getRoute("about")}
+            id="map"
+            navigatorUID="map"
+            initialRoute={Router.getRoute("map")}
+          />
+        </TabItem> */}
+        <TabItem
+          id="faves"
+          title="Faves"
+          renderTitle={this.renderTitle}
+          renderIcon={isSelected => this.renderIcon(isSelected, { faveIcon })}
+        >
+          <StackNavigation
+            id="faves"
+            navigatorUID="faves"
+            initialRoute={Router.getRoute("faves")}
           />
         </TabItem>
         <TabItem
           id="about"
           title="About"
           renderTitle={this.renderTitle}
-          renderIcon={isSelected => this.renderIcon(isSelected, { atIcon })}
-        >
-          <StackNavigation
-            id="about"
-            navigatorUID="about"
-            initialRoute={Router.getRoute("about")}
-          />
-        </TabItem>
-        <TabItem
-          id="about"
-          title="About"
-          renderTitle={this.renderTitle}
-          renderIcon={isSelected => this.renderIcon(isSelected, { atIcon })}
+          renderIcon={isSelected => this.renderIcon(isSelected, { aboutIcon })}
         >
           <StackNavigation
             id="about"

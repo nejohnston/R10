@@ -15,12 +15,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 import Router from "./routes";
 import { colors, typography } from "../config/styles";
 
-import {
-  calendarIcon,
-  heartIcon,
-  mapIcon,
-  atIcon
-} from "../config/iconHelpers";
+import { scheduleIcon, faveIcon, aboutIcon } from "../config/iconHelpers";
 
 const { black, white, mediumGrey } = colors;
 const { fontMain, lightMain } = typography;
@@ -35,7 +30,7 @@ class Nav extends Component {
           title="Schedule"
           renderTitle={this.renderTitle}
           renderIcon={isSelected =>
-            this.renderIcon(isSelected, { calendarIcon })
+            this.renderIcon(isSelected, { scheduleIcon })
           }
         >
           <StackNavigation
@@ -48,7 +43,7 @@ class Nav extends Component {
           id="faves"
           title="Faves"
           renderTitle={this.renderTitle}
-          renderIcon={isSelected => this.renderIcon(isSelected, { heartIcon })}
+          renderIcon={isSelected => this.renderIcon(isSelected, { faveIcon })}
         >
           <StackNavigation
             id="faves"
@@ -60,7 +55,7 @@ class Nav extends Component {
           id="about"
           title="About"
           renderTitle={this.renderTitle}
-          renderIcon={isSelected => this.renderIcon(isSelected, "md-at")}
+          renderIcon={isSelected => this.renderIcon(isSelected, { aboutIcon })}
         >
           <StackNavigation
             id="about"
