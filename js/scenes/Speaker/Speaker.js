@@ -16,7 +16,7 @@ const Speaker = ({ data }) => (
       </View>
     </View>
     <View style={styles.body}>
-      <Text>Session</Text>
+      <Text style={styles.bodyText}>{data[0].bio}</Text>
     </View>
   </View>
 );

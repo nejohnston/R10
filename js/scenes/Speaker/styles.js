@@ -20,6 +20,9 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 25,
     marginBottom: 20
+  },
+  bodyText: {
+    color: "black"
   }
 });
 

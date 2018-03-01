@@ -1,5 +1,4 @@
 import SINGLE_SPEAKER_ENDPOINT from "../../config/endpoints";
-
 // ACTIONS
 const GET_SPEAKER_LOADING = "GET_ABOUT_LOADING";
 const GET_SPEAKER = "GET_ABOUT";
