@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Text } from "react-native";
+import Speaker from "./Speaker";
 
 class SpeakerContainer extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class SpeakerContainer extends Component {
   };
 
   render() {
-    return <Text>sdfasdf</Text>;
+    return <Speaker data={this.props.route.params.speakerData} />;
   }
 }
 
