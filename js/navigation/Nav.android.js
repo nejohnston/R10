@@ -2,10 +2,12 @@ import React, { Component } from "react";
 
 import {
   StackNavigation,
-  TabNavigation,
-  TabNavigationItem as TabItem
+  DrawerNavigation,
+  DrawerNavigationItem
 } from "@expo/ex-navigation";
 
+// Treat the DrawerNavigationLayout route like any other route -- you may want to set
+// it as the intiial route for a top-level StackNavigation
 import { Text, StyleSheet } from "react-native";
 
 import Icon from "react-native-vector-icons/Ionicons";
@@ -15,36 +17,36 @@ import { colors, typography } from "../config/styles";
 const { black, white, mediumGrey } = colors;
 const { fontMain, lightMain } = typography;
 
-class NavigationLayout extends Component {
+class Nav extends Component {
   render() {
     return (
       // Put your tab bar / tab items / stack navs here~~~~~~
-      <TabNavigation id="main" navigatorUID="main" initialTab="schedule">
-        <TabItem
+      <DrawerNavigation id="main" navigatorUID="main" initialItem="schedule">
+        <DrawerNavigationItem
           id="schedule"
           title="Schedule"
           renderTitle={this.renderTitle}
-          renderIcon={isSelected => this.renderIcon(isSelected, "ios-calendar")}
+          renderIcon={isSelected => this.renderIcon(isSelected, "md-calendar")}
         >
           <StackNavigation
             id="schedule"
             navigatorUID="schedule"
             initialRoute={Router.getRoute("schedule")}
           />
-        </TabItem>
-        <TabItem
+        </DrawerNavigationItem>
+        <DrawerNavigationItem
           id="about"
           title="About"
           renderTitle={this.renderTitle}
-          renderIcon={isSelected => this.renderIcon(isSelected, "ios-at")}
+          renderIcon={isSelected => this.renderIcon(isSelected, "md-at")}
         >
           <StackNavigation
             id="about"
             navigatorUID="about"
             initialRoute={Router.getRoute("about")}
           />
-        </TabItem>
-      </TabNavigation>
+        </DrawerNavigationItem>
+      </DrawerNavigation>
     );
   }
   renderTitle(isSelected, title) {
@@ -63,8 +65,4 @@ class NavigationLayout extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  // fontStyle: fontMain
-});
-
-export default NavigationLayout;
+export default Nav;

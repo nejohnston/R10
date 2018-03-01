@@ -39,7 +39,7 @@ export const fetchSpeaker = () => dispatch => {
 export default (
   state = {
     isLoading: false,
-    speakerData: [],
+    speakerData: {},
     error: ""
   },
   action

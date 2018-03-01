@@ -38,7 +38,7 @@ const mapStateToProps = state => ({
 
 SessionContainer.propTypes = {
   dispatch: PropTypes.func,
-  speakerData: PropTypes.array,
+  speakerData: PropTypes.object,
   route: PropTypes.object
 };
 
