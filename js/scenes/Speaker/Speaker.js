@@ -10,9 +10,9 @@ const Speaker = ({ data }) => (
   <View style={styles.container}>
     <View style={styles.header}>
       <View>
-        {/* <TouchableHighlight onPress={() => popSpeaker()}> */}
-        <Icon active name="ios-close" size={30} color="white" />
-        {/* </TouchableHighlight> */}
+        <TouchableHighlight onPress={() => popSpeaker()}>
+          <Icon active name="ios-close" size={40} color="white" />
+        </TouchableHighlight>
       </View>
       <View>
         <Text style={styles.headerText}>About this Speaker</Text>
