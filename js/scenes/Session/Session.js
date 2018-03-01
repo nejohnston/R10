@@ -7,7 +7,7 @@ import { goToSpeaker } from "../../config/navigationHelpers";
 
 const Session = ({ data }) => (
   <View>
-    <TouchableHighlight onPress={() => goToSpeaker("hi")}>
+    <TouchableHighlight onPress={() => goToSpeaker(data)}>
       <Text>{data.description}</Text>
     </TouchableHighlight>
   </View>

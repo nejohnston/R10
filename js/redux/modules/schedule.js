@@ -10,9 +10,9 @@ export const getScheduleLoading = isLoading => ({
   type: GET_SCHEDULE_LOADING
 });
 
-export const getScheduleSessions = scheduleData => ({
+export const getScheduleSessions = sessionData => ({
   type: GET_SCHEDULE_SESSIONS,
-  payload: scheduleData
+  payload: sessionData
 });
 
 export const getScheduleError = error => ({
@@ -32,33 +32,35 @@ export const fetchScheduleInfo = () => dispatch => {
     })
     .catch(error => dispatch(getScheduleError(error)));
 };
-export const fetchSessionsAndSpeaker = () => dispatch => {
-  dispatch(getScheduleLoading());
+// export const fetchSessionsAndSpeaker = () => dispatch => {
+//   dispatch(getScheduleLoading());
 
-  return Promise.all(
-    [
-      "https://r10app-95fea.firebaseio.com/sessions.json",
-      "https://r10app-95fea.firebaseio.com/speakers.json?orderBy=%22speaker_id%22&equalTo=%22-KZ2o1CzG5GOfmURNSUB%22"
-    ].map(url => fetch(url).then(response => response.json()))
-  )
-    .then(json => {
-      const [itemsData, users] = json;
-      const itemsWithOwners = itemsData.map(item => {
-        const itemowner = users.filter(user => user.id === item.itemowner);
-        item.itemowner = itemowner[0];
-        return item;
-      });
+//   return Promise.all(
+//     [
+//       "https://r10app-95fea.firebaseio.com/sessions.json",
+//       "https://r10app-95fea.firebaseio.com/speakers.json?orderBy=%22speaker_id%22&equalTo=%22-KZ2o1CzG5GOfmURNSUB%22"
+//     ].map(url => fetch(url).then(res => res.json()))
+//   )
+//     .then(json => {
+//       const [sessionData, speakers] = json;
+//       const sessionsWithSpeakers = sessionData.map(session => {
+//         const sessionSpeaker = speakers.filter(
+//           speaker => speakers[0].speaker_id === session.speaker
+//         );
+//         session.speaker = sessionSpeaker[0];
+//         return session;
+//       });
 
-      dispatch(getItems(itemsWithOwners));
-    })
-    .catch(error => dispatch(getItemsError(error)));
-};
+//       dispatch(getScheduleSessions(sessionsWithSpeakers));
+//     })
+//     .catch(error => dispatch(getScheduleError(error)));
+// };
 // REDUCER
 
 export default (
   state = {
     isLoading: false,
-    scheduleData: [],
+    sessionData: [],
     error: ""
   },
   action
@@ -71,7 +73,7 @@ export default (
       return {
         ...state,
         isLoading: false,
-        scheduleData: action.payload,
+        sessionData: action.payload,
         error: ""
       };
     }

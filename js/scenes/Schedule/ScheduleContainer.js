@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 
 import Schedule from "./Schedule";
 import { fetchScheduleInfo } from "../../redux/modules/schedule";
-import { formatSessionData } from "../../config/helpers";
 
 class ScheduleContainer extends Component {
   constructor(props) {
@@ -22,13 +21,13 @@ class ScheduleContainer extends Component {
   }
 
   render() {
-    return <Schedule data={this.props.scheduleData} />;
+    return <Schedule data={this.props.sessionData} />;
   }
 }
 
 const mapStateToProps = state => ({
   isLoading: state.schedule.isLoading,
-  scheduleData: state.schedule.scheduleData,
+  sessionData: state.schedule.sessionData,
   error: state.schedule.error
 });
 

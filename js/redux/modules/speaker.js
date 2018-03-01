@@ -22,11 +22,11 @@ export const getSpeakerError = error => ({
 
 // ASYNC ACTION CREATOR
 
-export const fetchSpeakerInfo = () => dispatch => {
+export const fetchSpeaker = () => dispatch => {
   dispatch(getSpeakerLoading());
 
   return fetch(
-    `https://r10app-95fea.firebaseio.com/speakers.json?orderBy=%22speaker_id%22&equalTo=%22-KZ2o1CzG5GOfmURNSUB%22`
+    "https://r10app-95fea.firebaseio.com/speakers.json?orderBy=%22speaker_id%22&equalTo=%22-KZ2o1CzG5GOfmURNSUB%22"
   )
     .then(res => res.json())
     .then(data => {
@@ -39,7 +39,7 @@ export const fetchSpeakerInfo = () => dispatch => {
 export default (
   state = {
     isLoading: false,
-    speakerData: [],
+    speakerData: {},
     error: ""
   },
   action
