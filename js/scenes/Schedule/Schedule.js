@@ -32,4 +32,8 @@ const Schedule = ({ data }) => (
   </View>
 );
 
+Schedule.propTypes = {
+  data: PropTypes.object
+};
+
 export default Schedule;
