@@ -6,7 +6,8 @@ import Icon from "react-native-vector-icons/Ionicons";
 import styles from "./styles";
 import { goToSpeaker } from "../../config/navigationHelpers";
 import speaker from "../../redux/modules/speaker";
-import { heartIcon } from "../../config/platformHelper";
+import { heartIcon } from "../../config/platformHelpers";
+import { colors } from "../../config/styles";
 
 const Session = ({ data, speakerData }) => (
   <View>
@@ -14,7 +15,7 @@ const Session = ({ data, speakerData }) => (
       <Text>{data.description}</Text>
     </TouchableHighlight>
     <TouchableHighlight>
-      <Icon name={heartIcon} size={30} />
+      <Icon name={heartIcon} size={30} color={"red"} />
     </TouchableHighlight>
   </View>
 );

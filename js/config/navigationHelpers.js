@@ -9,6 +9,10 @@ export const goToSpeaker = speakerData => {
   );
 };
 
+export const popSpeaker = () => {
+  Store.dispatch(NavigationActions.pop("speaker", Router.getRoute("root")));
+};
+
 export const goToSession = (currentNavigatorUID, data) => {
   Store.dispatch(
     NavigationActions.push(
