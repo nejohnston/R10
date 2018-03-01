@@ -32,6 +32,27 @@ export const fetchScheduleInfo = () => dispatch => {
     })
     .catch(error => dispatch(getScheduleError(error)));
 };
+export const fetchSessionsAndSpeaker = () => dispatch => {
+  dispatch(getScheduleLoading());
+
+  return Promise.all(
+    [
+      "https://r10app-95fea.firebaseio.com/sessions.json",
+      "https://r10app-95fea.firebaseio.com/speakers.json?orderBy=%22speaker_id%22&equalTo=%22-KZ2o1CzG5GOfmURNSUB%22"
+    ].map(url => fetch(url).then(response => response.json()))
+  )
+    .then(json => {
+      const [itemsData, users] = json;
+      const itemsWithOwners = itemsData.map(item => {
+        const itemowner = users.filter(user => user.id === item.itemowner);
+        item.itemowner = itemowner[0];
+        return item;
+      });
+
+      dispatch(getItems(itemsWithOwners));
+    })
+    .catch(error => dispatch(getItemsError(error)));
+};
 // REDUCER
 
 export default (
