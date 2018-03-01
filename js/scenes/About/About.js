@@ -3,14 +3,12 @@ import PropTypes from "prop-types";
 import { Text, View, Image, ScrollView } from "react-native";
 
 import styles from "./styles";
+import R10_Image from "../../assets/images/r10_logo.png";
 
 const About = ({ data }) => (
   <ScrollView style={styles.container}>
     <View style={styles.headerView}>
-      <Image
-        style={styles.headerImage}
-        source={require("../../assets/images/r10_logo.png")}
-      />
+      <Image style={styles.headerImage} source={R10_Image} />
     </View>
     <Text style={styles.bodyText}>
       R10 is a conference that focuses on just about any topic related to dev.
