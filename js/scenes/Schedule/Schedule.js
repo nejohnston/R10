@@ -5,7 +5,7 @@ import { goToSession } from "../../config/navHelpers";
 
 import { Text, View, SectionList, TouchableHighlight } from "react-native";
 import styles from "./styles";
-import moment from "moment";
+import { formatUnixDate } from "../../config/helpers";
 
 const Schedule = ({ data }) => (
   <View>
@@ -20,7 +20,7 @@ const Schedule = ({ data }) => (
         </TouchableHighlight>
       )}
       renderSectionHeader={({ section }) => (
-        <Text>{moment.unix(section.title).format("LT")}</Text>
+        <Text>{formatUnixDate(section.title)}</Text>
       )}
       keyExtractor={(item, index) => index}
       stickySectionHeadersEnabled={false}

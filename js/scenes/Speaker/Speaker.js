@@ -5,13 +5,14 @@ import { Text, View, TouchableHighlight } from "react-native";
 
 import styles from "./styles";
 import { popSpeaker } from "../../config/navHelpers";
+import { closeIcon } from "../../config/platformHelpers";
 
 const Speaker = ({ data }) => (
   <View style={styles.container}>
     <View style={styles.header}>
       <View>
         <TouchableHighlight onPress={() => popSpeaker()}>
-          <Icon active name="ios-close" size={40} color="white" />
+          <Icon active name={closeIcon} size={40} color="white" />
         </TouchableHighlight>
       </View>
       <View>
