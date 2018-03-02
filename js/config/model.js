@@ -5,7 +5,7 @@ const FaveSchema = {
   primaryKey: "session_id",
   properties: {
     session_id: { type: "string" },
-    faved_on: "data"
+    faved_on: { type: "date" }
   }
 };
 
