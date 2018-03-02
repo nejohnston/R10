@@ -7,7 +7,7 @@ import styles from "./styles";
 import { popSpeaker } from "../../config/navHelpers";
 import { closeIcon } from "../../config/iconHelpers";
 
-const Speaker = ({ data }) => (
+const Speaker = ({ speakerData }) => (
   <View style={styles.container}>
     <View style={styles.header}>
       <View>
@@ -20,13 +20,13 @@ const Speaker = ({ data }) => (
       </View>
     </View>
     <View style={styles.body}>
-      <Text style={styles.bodyText}>{data.bio}</Text>
+      <Text style={styles.bodyText}>{speakerData.bio}</Text>
     </View>
   </View>
 );
 
 Speaker.propTypes = {
-  data: PropTypes.object
+  speakerData: PropTypes.object
 };
 
 export default Speaker;

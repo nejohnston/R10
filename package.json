@@ -9,6 +9,7 @@
   "dependencies": {
     "@expo/ex-navigation": "^4.2.0",
     "babel-preset-react-native-stage-0": "^1.0.1",
+    "babel-register": "^6.26.0",
     "moment": "^2.20.1",
     "react": "16.2.0",
     "react-native": "0.53.3",

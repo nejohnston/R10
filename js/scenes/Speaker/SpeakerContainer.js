@@ -6,6 +6,7 @@ import Speaker from "./Speaker";
 class SpeakerContainer extends Component {
   constructor(props) {
     super(props);
+    console.log(props);
   }
 
   static route = {
@@ -15,7 +16,7 @@ class SpeakerContainer extends Component {
   };
 
   render() {
-    return <Speaker data={this.props.route.params.speakerData} />;
+    return <Speaker speakerData={this.props.speakerData} />;
   }
 }
 

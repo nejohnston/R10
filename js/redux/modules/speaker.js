@@ -1,4 +1,4 @@
-import { SINGLE_SPEAKER_ENDPOINT } from "../../config/endpoints";
+import { FIREBASE_URL } from "../../config/endpoints";
 import { formatDataObject } from "../../config/helpers";
 // ACTIONS
 const GET_SPEAKER_LOADING = "GET_ABOUT_LOADING";
@@ -22,10 +22,12 @@ export const getSpeakerError = error => ({
 
 // ASYNC ACTION CREATOR
 
-export const fetchSpeaker = () => dispatch => {
+export const fetchSpeaker = ({ speaker }) => dispatch => {
   dispatch(getSpeakerLoading());
 
-  return fetch(SINGLE_SPEAKER_ENDPOINT)
+  return fetch(
+    `${FIREBASE_URL}speakers.json?orderBy="speaker_id"&equalTo="${speaker}"`
+  )
     .then(res => res.json())
     .then(data => {
       dispatch(getSpeaker(data));

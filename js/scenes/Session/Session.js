@@ -12,13 +12,13 @@ import { createFave } from "../../config/model";
 
 const Session = ({ data, speakerData }) => (
   <View>
-    <TouchableHighlight onPress={() => goToSpeaker(speakerData)}>
+    <TouchableHighlight onPress={() => goToSpeaker(data.speaker)}>
       <Text>{data.description}</Text>
     </TouchableHighlight>
     <TouchableHighlight>
       <Icon
         active
-        onPress={() => createFave(data.session_id)}
+        onPress={() => createFave(data.speaker_id)}
         name={faveIcon}
         size={30}
         color={"red"}
