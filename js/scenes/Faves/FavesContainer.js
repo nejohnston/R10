@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Faves from "./Faves";
 import { fetchSpeaker } from "../../redux/modules/speaker";
 import { connect } from "react-redux";
+import { getRealmFaves } from "../../redux/modules/faves";
 
 class FavesContainer extends Component {
   constructor(props) {
@@ -17,30 +18,30 @@ class FavesContainer extends Component {
   };
 
   componentDidMount() {
-    this.props.dispatch(fetchSpeaker());
+    this.props.dispatch(getRealmFaves());
+    console.log(this.props.dispatch(getRealmFaves()));
   }
 
   render() {
     return (
       <Faves
-      // data={this.props.route.params.data}
-      // speakerData={this.props.speakerData}
+        // data={this.props.route.params.data}
+        faves={this.props.favesData}
       />
     );
   }
 }
 
-// const mapStateToProps = state => ({
-//   isLoading: state.faves.isLoading,
-//   speakerData: state.faves.speakerData,
-//   error: state.faves.error
-// });
+const mapStateToProps = state => ({
+  isLoading: state.faves.isLoading,
+  faves: state.faves.favesData,
+  error: state.faves.error
+});
 
-// FavesContainer.propTypes = {
-//   dispatch: PropTypes.func,
-//   speakerData: PropTypes.object,
-//   route: PropTypes.object
-// };
+FavesContainer.propTypes = {
+  dispatch: PropTypes.func,
+  faves: PropTypes.array
+};
 
 // const mapDispatchToProps = dispatch => {
 //   return {
@@ -50,5 +51,4 @@ class FavesContainer extends Component {
 //   };
 // };
 
-// export default connect(mapStateToProps)(FavesContainer);
-export default FavesContainer;
+export default connect(mapStateToProps)(FavesContainer);

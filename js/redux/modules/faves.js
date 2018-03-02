@@ -8,12 +8,13 @@ const GET_FAVES_ERROR = "GET_FAVES_ERROR";
 // Actions creator
 
 export const getFavesLoading = isLoading => ({
-  type: GET_FAVES_LOADING
+  type: GET_FAVES_LOADING,
+  payload: isLoading
 });
 
-export const getFaves = faves => ({
+export const getFaves = favesData => ({
   type: GET_FAVES,
-  payload: faves
+  payload: favesData
 });
 
 export const getFavesError = error => ({
@@ -24,12 +25,12 @@ export const getFavesError = error => ({
 // Realm query fn
 
 export const getRealmFaves = data => dispatch => {
-  dispatch(getFavesLoading());
-  //   try {
-  //     dispatch(getFaves(queryFave(data)));
-  //   } catch (error) {
-  //     dispatch(getFavesError(error));
-  //   }
+  //   dispatch(getFavesLoading());
+  try {
+    dispatch(getFaves(queryFave()));
+  } catch (error) {
+    dispatch(getFavesError(error));
+  }
 };
 
 // Reducer
@@ -37,7 +38,7 @@ export const getRealmFaves = data => dispatch => {
 export default (
   state = {
     isLoading: false,
-    faves: [],
+    favesData: [],
     error: ""
   },
   action
