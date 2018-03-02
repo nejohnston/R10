@@ -8,6 +8,7 @@ import { goToSpeaker } from "../../config/navHelpers";
 import speaker from "../../redux/modules/speaker";
 import { faveIcon } from "../../config/iconHelpers";
 import { colors } from "../../config/styles";
+import { createFave } from "../../config/model";
 
 const Session = ({ data, speakerData }) => (
   <View>
@@ -15,7 +16,13 @@ const Session = ({ data, speakerData }) => (
       <Text>{data.description}</Text>
     </TouchableHighlight>
     <TouchableHighlight>
-      <Icon name={faveIcon} size={30} color={"red"} />
+      <Icon
+        active
+        onPress={() => createFave(data.session_id)}
+        name={faveIcon}
+        size={30}
+        color={"red"}
+      />
     </TouchableHighlight>
   </View>
 );

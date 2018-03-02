@@ -25,11 +25,11 @@ export const getFavesError = error => ({
 
 export const getRealmFaves = data => dispatch => {
   dispatch(getFavesLoading());
-  try {
-    dispatch(getFaves(queryFave()));
-  } catch (error) {
-    dispatch(getFavesError(error));
-  }
+  //   try {
+  //     dispatch(getFaves(queryFave(data)));
+  //   } catch (error) {
+  //     dispatch(getFavesError(error));
+  //   }
 };
 
 // Reducer

@@ -2,15 +2,14 @@ import Realm from "realm";
 
 const FaveSchema = {
   name: "Fave",
-  primaryKey: "id",
+  primaryKey: "session_id",
   properties: {
-    fave_id: "string",
+    session_id: { type: "string" },
     faved_on: "data"
   }
 };
 
 const realm = new Realm({ schema: [FaveSchema] });
-console.log(realm.path);
 
 export const queryFave = () => {
   return realm.objects("Fave");
@@ -18,7 +17,7 @@ export const queryFave = () => {
 export const createFave = id => {
   realm.write(() => {
     realm.create("Fave", {
-      fave_id: id,
+      session_id: id,
       faved_on: new Date()
     });
   });
