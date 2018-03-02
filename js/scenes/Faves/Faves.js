@@ -11,7 +11,7 @@ const Faves = ({ data }) => (
     <SectionList
       sections={data}
       renderItem={({ item }) => (
-        <TouchableHighlight onPress={() => goToSession("schedule", item)}>
+        <TouchableHighlight>
           <View>
             <Text>{item.title}</Text>
             <Text>{item.location}</Text>

@@ -1,4 +1,4 @@
-import SCHEDULE_ENDPOINT from "../../config/endpoints";
+import { SCHEDULE_ENDPOINT } from "../../config/endpoints";
 import { formatSessionData } from "../../config/helpers";
 // ACTIONS
 const GET_SCHEDULE_LOADING = "GET_SCHEDULE_LOADING";
@@ -25,7 +25,7 @@ export const getScheduleError = error => ({
 export const fetchScheduleInfo = () => dispatch => {
   dispatch(getScheduleLoading());
 
-  return fetch("https://r10app-95fea.firebaseio.com/sessions.json")
+  return fetch(SCHEDULE_ENDPOINT)
     .then(res => res.json())
     .then(data => {
       dispatch(getScheduleSessions(data));

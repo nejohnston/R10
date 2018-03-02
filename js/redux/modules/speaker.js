@@ -1,4 +1,4 @@
-import SINGLE_SPEAKER_ENDPOINT from "../../config/endpoints";
+import { SINGLE_SPEAKER_ENDPOINT } from "../../config/endpoints";
 import { formatDataObject } from "../../config/helpers";
 // ACTIONS
 const GET_SPEAKER_LOADING = "GET_ABOUT_LOADING";
@@ -25,9 +25,7 @@ export const getSpeakerError = error => ({
 export const fetchSpeaker = () => dispatch => {
   dispatch(getSpeakerLoading());
 
-  return fetch(
-    "https://r10app-95fea.firebaseio.com/speakers.json?orderBy=%22speaker_id%22&equalTo=%22-KZ2o1CzG5GOfmURNSUB%22"
-  )
+  return fetch(SINGLE_SPEAKER_ENDPOINT)
     .then(res => res.json())
     .then(data => {
       dispatch(getSpeaker(data));
