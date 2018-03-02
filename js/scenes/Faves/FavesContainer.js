@@ -34,13 +34,13 @@ class FavesContainer extends Component {
 
 const mapStateToProps = state => ({
   isLoading: state.faves.isLoading,
-  faves: state.faves.favesData,
+  favesData: state.faves.favesData,
   error: state.faves.error
 });
 
 FavesContainer.propTypes = {
   dispatch: PropTypes.func,
-  faves: PropTypes.array
+  favesData: PropTypes.array
 };
 
 // const mapDispatchToProps = dispatch => {
