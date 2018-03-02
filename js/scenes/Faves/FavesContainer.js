@@ -16,9 +16,9 @@ class FavesContainer extends Component {
     }
   };
 
-  componentDidMount() {
-    this.props.dispatch(fetchSpeaker());
-  }
+  //   componentDidMount() {
+  //     this.props.dispatch(fetchSpeaker());
+  //   }
 
   render() {
     return (

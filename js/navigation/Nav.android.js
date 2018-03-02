@@ -29,9 +29,7 @@ class Nav extends Component {
           id="schedule"
           title="Schedule"
           renderTitle={this.renderTitle}
-          renderIcon={isSelected =>
-            this.renderIcon(isSelected, { scheduleIcon })
-          }
+          renderIcon={isSelected => this.renderIcon(isSelected, scheduleIcon)}
         >
           <StackNavigation
             id="schedule"
@@ -43,7 +41,7 @@ class Nav extends Component {
           id="faves"
           title="Faves"
           renderTitle={this.renderTitle}
-          renderIcon={isSelected => this.renderIcon(isSelected, { faveIcon })}
+          renderIcon={isSelected => this.renderIcon(isSelected, faveIcon)}
         >
           <StackNavigation
             id="faves"
@@ -55,7 +53,7 @@ class Nav extends Component {
           id="about"
           title="About"
           renderTitle={this.renderTitle}
-          renderIcon={isSelected => this.renderIcon(isSelected, { aboutIcon })}
+          renderIcon={isSelected => this.renderIcon(isSelected, aboutIcon)}
         >
           <StackNavigation
             id="about"
