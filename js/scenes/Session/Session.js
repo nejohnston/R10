@@ -12,7 +12,7 @@ import { createFave } from "../../config/model";
 
 const Session = ({ data, speakerData }) => (
   <View>
-    <TouchableHighlight onPress={() => goToSpeaker(data.speaker)}>
+    <TouchableHighlight onPress={() => goToSpeaker(speakerData)}>
       <Text>{data.description}</Text>
     </TouchableHighlight>
     <TouchableHighlight>
