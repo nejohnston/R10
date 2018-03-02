@@ -1,3 +1,5 @@
+import { queryFave } from "../../config/model";
+
 // Actions
 const GET_FAVES_LOADING = "GET_FAVES_LOADING";
 const GET_FAVES = "GET_FAVES";
@@ -9,9 +11,9 @@ export const getFavesLoading = isLoading => ({
   type: GET_FAVES_LOADING
 });
 
-export const getFaves = favesData => ({
+export const getFaves = faves => ({
   type: GET_FAVES,
-  payload: favesData
+  payload: faves
 });
 
 export const getFavesError = error => ({
@@ -19,12 +21,23 @@ export const getFavesError = error => ({
   payload: error
 });
 
+// Realm query fn
+
+export const getRealmFaves = data => dispatch => {
+  dispatch(getFavesLoading());
+  try {
+    dispatch(getFaves(queryFave()));
+  } catch (error) {
+    dispatch(getFavesError(error));
+  }
+};
+
 // Reducer
 
 export default (
   state = {
     isLoading: false,
-    favesData: [],
+    faves: [],
     error: ""
   },
   action
