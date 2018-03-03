@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { goToSession } from "../config/navHelpers";
+import { goToSession } from "../../config/navHelpers";
 
 import { Text, View, SectionList, TouchableHighlight } from "react-native";
 import styles from "./styles";
-import { formatUnixDate } from "../config/helpers";
+import { formatUnixDate } from "../../config/helpers";
 
 const EventList = ({ data }) => (
   <View>

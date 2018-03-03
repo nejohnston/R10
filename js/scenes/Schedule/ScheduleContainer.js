@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import Schedule from "./Schedule";
 import { fetchScheduleInfo } from "../../redux/modules/schedule";
 
+import EventList from "../../components/EventList/EventList";
+
 class ScheduleContainer extends Component {
   constructor(props) {
     super(props);
@@ -21,7 +23,7 @@ class ScheduleContainer extends Component {
   }
 
   render() {
-    return <Schedule data={this.props.sessionData} />;
+    return <EventList data={this.props.sessionData} />;
   }
 }
 

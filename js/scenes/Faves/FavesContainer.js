@@ -20,13 +20,6 @@ class FavesContainer extends Component {
   componentDidMount() {
     this.props.dispatch(getRealmFaves());
   }
-  const faveSessions = itemTags && itemTags.length
-      ? items
-          .filter(item =>
-            item.tags.some(tag => itemTags.includes(tag.title))
-          )
-          .map(item => )
-  
 
   render() {
     return <Faves data={this.props.data} favesData={this.props.favesData} />;
