@@ -1,20 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { goToSession } from "../config/navHelpers";
+
 import { Text, View, SectionList, TouchableHighlight } from "react-native";
 import styles from "./styles";
+import { formatUnixDate } from "../config/helpers";
 
-const Faves = ({ favesData, data }) => (
+const EventList = ({ data }) => (
   <View>
     <SectionList
-      sections={favesData}
+      sections={data}
       renderItem={({ item }) => (
-        <TouchableHighlight>
+        <TouchableHighlight onPress={() => goToSession("schedule", item)}>
           <View>
             <Text>{item.title}</Text>
             <Text>{item.location}</Text>
           </View>
         </TouchableHighlight>
+      )}
+      renderSectionHeader={({ section }) => (
+        <Text>{formatUnixDate(section.title)}</Text>
       )}
       keyExtractor={(item, index) => index}
       stickySectionHeadersEnabled={false}
@@ -22,8 +28,8 @@ const Faves = ({ favesData, data }) => (
   </View>
 );
 
-Faves.propTypes = {
-  //   data: PropTypes.array
+EventList.propTypes = {
+  data: PropTypes.array
 };
 
-export default Faves;
+export default EventList;

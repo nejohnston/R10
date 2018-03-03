@@ -31,6 +31,7 @@ export const getRealmFaves = () => dispatch => {
   } catch (error) {
     dispatch(getFavesError(error));
   }
+  console.log(favesData);
 };
 
 // Reducer
