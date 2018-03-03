@@ -12,7 +12,7 @@ const FaveSchema = {
 const realm = new Realm({ schema: [FaveSchema] });
 
 export const queryFave = () => {
-  return realm.objects("Fave");
+  return realm.objects("Fave").map(fave => fave.session_id);
 };
 export const createFave = id => {
   realm.write(() => {

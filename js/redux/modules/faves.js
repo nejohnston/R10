@@ -24,8 +24,8 @@ export const getFavesError = error => ({
 
 // Realm query fn
 
-export const getRealmFaves = data => dispatch => {
-  //   dispatch(getFavesLoading());
+export const getRealmFaves = () => dispatch => {
+  dispatch(getFavesLoading());
   try {
     dispatch(getFaves(queryFave()));
   } catch (error) {

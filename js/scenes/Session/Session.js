@@ -18,7 +18,7 @@ const Session = ({ data, speakerData }) => (
     <TouchableHighlight>
       <Icon
         active
-        onPress={() => createFave(data.speaker_id)}
+        onPress={() => createFave(data.session_id)}
         name={faveIcon}
         size={30}
         color={"red"}

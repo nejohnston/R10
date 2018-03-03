@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import Faves from "./Faves";
+import { Text } from "react-native";
 import { fetchSpeaker } from "../../redux/modules/speaker";
 import { connect } from "react-redux";
 import { getRealmFaves } from "../../redux/modules/faves";
@@ -19,15 +20,17 @@ class FavesContainer extends Component {
 
   componentDidMount() {
     this.props.dispatch(getRealmFaves());
-    console.log(this.props.dispatch(getRealmFaves()));
   }
 
   render() {
+    console.log(this.props.favesData);
+
     return (
-      <Faves
-        // data={this.props.route.params.data}
-        faves={this.props.favesData}
-      />
+      // <Faves
+      //   // data={this.props.route.params.data}
+      //   faves={this.props.favesData}
+      // />
+      <Text>hey</Text>
     );
   }
 }
@@ -42,13 +45,5 @@ FavesContainer.propTypes = {
   dispatch: PropTypes.func,
   favesData: PropTypes.array
 };
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     fetchSpeaker(speakerId) {
-//       dispatch(fetchSpeaker(speakerId));
-//     }
-//   };
-// };
 
 export default connect(mapStateToProps)(FavesContainer);
