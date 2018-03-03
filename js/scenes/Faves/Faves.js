@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 import { Text, View, SectionList, TouchableHighlight } from "react-native";
 import styles from "./styles";
 
-const Faves = ({ favesData, data }) => (
+const Faves = ({ faves, data }) => (
   <View>
     <SectionList
-      sections={favesData}
+      sections={faves}
       renderItem={({ item }) => (
         <TouchableHighlight>
           <View>

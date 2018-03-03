@@ -12,9 +12,9 @@ export const getFavesLoading = isLoading => ({
   payload: isLoading
 });
 
-export const getFaves = favesData => ({
+export const getFaves = faves => ({
   type: GET_FAVES,
-  payload: favesData
+  payload: faves
 });
 
 export const getFavesError = error => ({
@@ -31,7 +31,6 @@ export const getRealmFaves = () => dispatch => {
   } catch (error) {
     dispatch(getFavesError(error));
   }
-  console.log(favesData);
 };
 
 // Reducer
@@ -39,7 +38,7 @@ export const getRealmFaves = () => dispatch => {
 export default (
   state = {
     isLoading: false,
-    favesData: [],
+    faves: [],
     error: ""
   },
   action
@@ -52,7 +51,7 @@ export default (
       return {
         ...state,
         isLoading: false,
-        favesData: action.payload,
+        faves: action.payload,
         error: ""
       };
     }

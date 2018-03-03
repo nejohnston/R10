@@ -7,7 +7,7 @@ import { Text, View, SectionList, TouchableHighlight } from "react-native";
 import styles from "./styles";
 import { formatUnixDate } from "../../config/helpers";
 
-const EventList = ({ data }) => (
+const EventList = ({ data, faves }) => (
   <View>
     <SectionList
       sections={data}

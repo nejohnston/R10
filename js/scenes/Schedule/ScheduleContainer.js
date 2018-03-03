@@ -23,7 +23,7 @@ class ScheduleContainer extends Component {
   }
 
   render() {
-    return <EventList data={this.props.sessionData} />;
+    return <EventList sessionData={this.props.sessionData} />;
   }
 }
 
