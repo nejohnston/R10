@@ -51,7 +51,7 @@ export default (
       return {
         ...state,
         isLoading: false,
-        faves: action.payload,
+        favesData: action.payload,
         error: ""
       };
     }
