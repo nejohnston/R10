@@ -29,7 +29,7 @@ const Session = ({ data, speakerData }) => (
 
 Session.propTypes = {
   data: PropTypes.object,
-  speakerData: PropTypes.objectOf
+  speakerData: PropTypes.object
 };
 
 export default Session;
