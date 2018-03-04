@@ -16,13 +16,7 @@ import { connect } from "react-redux";
 const Session = ({ data, speakerData, faves, favedOrNot }) => (
   <View>
     {faves.includes(data.session_id) && (
-      <Icon
-        active
-        onPress={() => createFave(data.session_id)}
-        name={faveIcon}
-        size={30}
-        color={"red"}
-      />
+      <Icon name={faveIcon} size={30} color={"red"} />
     )}
     {speakerData && (
       <TouchableHighlight onPress={() => goToSpeaker(speakerData)}>

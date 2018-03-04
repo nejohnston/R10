@@ -17,7 +17,6 @@ class AboutContainer extends Component {
       title: "About"
     }
   };
-  // fetch loading true, data empty array component did mount setstate to loading false
   componentDidMount() {
     this.props.dispatch(fetchAboutInfo());
   }
