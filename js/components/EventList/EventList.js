@@ -7,10 +7,10 @@ import { Text, View, SectionList, TouchableHighlight } from "react-native";
 import styles from "./styles";
 import { formatUnixDate } from "../../config/helpers";
 
-const EventList = ({ data, faves }) => (
+const EventList = ({ sessionData, faves }) => (
   <View>
     <SectionList
-      sections={data}
+      sections={sessionData}
       renderItem={({ item }) => (
         <TouchableHighlight onPress={() => goToSession("schedule", item)}>
           <View>
@@ -29,7 +29,8 @@ const EventList = ({ data, faves }) => (
 );
 
 EventList.propTypes = {
-  data: PropTypes.array
+  sessionData: PropTypes.array,
+  faves: PropTypes.array
 };
 
 export default EventList;

@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
+import { Text } from "react-native";
 import EventList from "../../components/EventList/EventList";
 import { fetchSpeaker } from "../../redux/modules/speaker";
 import { connect } from "react-redux";
 import { getRealmFaves } from "../../redux/modules/faves";
+import { filteredFaves } from "../../config/helpers";
 
 class FavesContainer extends Component {
   constructor(props) {
@@ -21,13 +22,13 @@ class FavesContainer extends Component {
     this.props.dispatch(getRealmFaves());
   }
 
-  _filteredFaves = () => {
-    const faves = this.props.faves;
-    const sessions = this.props.sessionData;
-  };
-
   render() {
-    return <EventList faves={this.props.faves} />;
+    console.log(this.props.sessionData);
+    console.log(this.props.faves);
+    const { faves, sessionData } = this.props;
+    const faveSessions = filteredFaves(faves, sessionData);
+
+    return <EventList faves={faves} faveSessions={faveSessions} />;
   }
 }
 

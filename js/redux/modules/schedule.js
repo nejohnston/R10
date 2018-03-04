@@ -48,11 +48,11 @@ export default (
       return { ...state, isLoading: true, error: "" };
     }
     case GET_SCHEDULE_SESSIONS: {
-      const formattedSchedule = formatSessionData(action.payload);
+      // const formattedSchedule = formatSessionData(action.payload);
       return {
         ...state,
         isLoading: false,
-        sessionData: formattedSchedule,
+        sessionData: action.payload,
         error: ""
       };
     }

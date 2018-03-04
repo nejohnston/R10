@@ -17,6 +17,10 @@ export const formatSessionData = sessions => {
     .sort((a, b) => a.title - b.title);
 };
 
+export const filteredFaves = (faves, sessions) => {
+  return sessions.includes(session => faves.includes(session.session_id));
+};
+
 export const formatUnixDate = date => {
   const newDate = new Date(date * 1000);
   const hours = newDate.getUTCHours() - 7;

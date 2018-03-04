@@ -6,6 +6,7 @@ import Schedule from "./Schedule";
 import { fetchScheduleInfo } from "../../redux/modules/schedule";
 
 import EventList from "../../components/EventList/EventList";
+import { formatSessionData } from "../../config/helpers";
 
 class ScheduleContainer extends Component {
   constructor(props) {
@@ -23,7 +24,9 @@ class ScheduleContainer extends Component {
   }
 
   render() {
-    return <EventList sessionData={this.props.sessionData} />;
+    const formattedSchedule = formatSessionData(this.props.sessionData);
+
+    return <EventList sessionData={formattedSchedule} />;
   }
 }
 
