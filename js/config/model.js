@@ -24,7 +24,7 @@ export const createFave = id => {
 };
 export const deleteFave = id => {
   realm.write(() => {
-    const faveToDelete = realm.objects("Fave").filtered("fave_id == $0", id);
+    const faveToDelete = realm.objects("Fave").filtered("session_id == $0", id);
     realm.delete(faveToDelete);
   });
 };
