@@ -1,4 +1,4 @@
-import { queryFave } from "../../config/model";
+import { queryFave, createFave, deleteFave } from "../../config/model";
 
 // Actions
 const GET_FAVES_LOADING = "GET_FAVES_LOADING";
@@ -59,6 +59,17 @@ export default (
         ...state,
         isLoading: false,
         faves: action.payload,
+        error: ""
+      };
+    }
+    case FAVED_OR_NOT: {
+      if (action.onOrOff) createFave(action.session_id);
+      else deleteFave(action.session_id);
+      const faves = queryFave();
+      return {
+        ...state,
+        isLoading: false,
+        faves,
         error: ""
       };
     }

@@ -9,16 +9,19 @@ import speaker from "../../redux/modules/speaker";
 import { faveIcon } from "../../config/iconHelpers";
 import { colors } from "../../config/styles";
 import { createFave, deleteFave } from "../../config/model";
+import { favedOrNot } from "../../redux/modules/faves";
 
-const Session = ({ data, speakerData }) => (
+const Session = ({ data, speakerData, faves }) => (
   <View>
-    <Icon
-      active
-      onPress={() => createFave(data.session_id)}
-      name={faveIcon}
-      size={30}
-      color={"red"}
-    />
+    {faves.includes(data.session_id) && (
+      <Icon
+        active
+        onPress={() => createFave(data.session_id)}
+        name={faveIcon}
+        size={30}
+        color={"red"}
+      />
+    )}
     {speakerData && (
       <TouchableHighlight onPress={() => goToSpeaker(speakerData)}>
         <View>
@@ -35,13 +38,20 @@ const Session = ({ data, speakerData }) => (
         </View>
       </TouchableHighlight>
     )}
-
-    <Button title="Remove Fave" onPress={() => deleteFave(data.session_id)} />
+    <TouchableHighlight>
+      <Button
+        title="Remove Fave"
+        onPress={() =>
+          favedOrNot(data.session_id, !faves.includes(data.session_id))
+        }
+      />
+    </TouchableHighlight>
   </View>
 );
 
 Session.propTypes = {
   data: PropTypes.object,
+  faves: PropTypes.array,
   speakerData: PropTypes.object
 };
 

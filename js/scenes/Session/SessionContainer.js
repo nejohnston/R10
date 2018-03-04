@@ -25,6 +25,7 @@ class SessionContainer extends Component {
       <Session
         data={this.props.route.params.data}
         speakerData={this.props.speakerData}
+        faves={this.props.faves}
       />
     );
   }
@@ -32,6 +33,7 @@ class SessionContainer extends Component {
 
 const mapStateToProps = state => ({
   isLoading: state.speaker.isLoading,
+  faves: state.faves.faves,
   speakerData: state.speaker.speakerData,
   error: state.speaker.error
 });
@@ -39,6 +41,7 @@ const mapStateToProps = state => ({
 SessionContainer.propTypes = {
   dispatch: PropTypes.func,
   speakerData: PropTypes.object,
+  faves: PropTypes.array,
   route: PropTypes.object
 };
 

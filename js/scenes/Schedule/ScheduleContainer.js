@@ -23,21 +23,25 @@ class ScheduleContainer extends Component {
   }
 
   render() {
+    console.log(this.props.data);
     const formattedSchedule = formatSessionData(this.props.data);
+    console.log(formattedSchedule);
 
-    return <EventList data={formattedSchedule} />;
+    return <EventList data={formattedSchedule} faves={this.props.faves} />;
   }
 }
 
 const mapStateToProps = state => ({
   isLoading: state.schedule.isLoading,
   data: state.schedule.data,
+  faves: state.faves.faves,
   error: state.schedule.error
 });
 
 ScheduleContainer.propTypes = {
   dispatch: PropTypes.func,
   sessionData: PropTypes.array,
+  faves: PropTypes.array,
   data: PropTypes.array
 };
 
