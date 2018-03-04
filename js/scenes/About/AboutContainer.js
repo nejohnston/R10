@@ -39,4 +39,6 @@ const mapStateToProps = state => ({
   error: state.about.error
 });
 
+// AboutContainer.propTypes
+
 export default connect(mapStateToProps)(AboutContainer);

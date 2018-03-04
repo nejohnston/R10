@@ -11,7 +11,9 @@ import { colors } from "../../config/styles";
 import { createFave, deleteFave } from "../../config/model";
 import { favedOrNot } from "../../redux/modules/faves";
 
-const Session = ({ data, speakerData, faves }) => (
+import { connect } from "react-redux";
+
+const Session = ({ data, speakerData, faves, favedOrNot }) => (
   <View>
     {faves.includes(data.session_id) && (
       <Icon
@@ -41,7 +43,7 @@ const Session = ({ data, speakerData, faves }) => (
     <TouchableHighlight
       title="Remove Fave"
       onPress={() =>
-        dispatch(favedOrNot(data.session_id, !faves.includes(data.session_id)))
+        favedOrNot(data.session_id, !faves.includes(data.session_id))
       }
     >
       <Text>her</Text>
@@ -52,7 +54,18 @@ const Session = ({ data, speakerData, faves }) => (
 Session.propTypes = {
   data: PropTypes.object,
   faves: PropTypes.array,
-  speakerData: PropTypes.object
+  speakerData: PropTypes.object,
+  favedOrNot: PropTypes.func
 };
 
-export default Session;
+const mapStateToProps = state => ({
+  faves: state.faves.faves
+});
+
+const mapDispatchToProps = dispatch => ({
+  favedOrNot: (session_id, isFaved) => {
+    dispatch(favedOrNot(session_id, isFaved));
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Session);

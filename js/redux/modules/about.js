@@ -27,8 +27,8 @@ export const fetchAboutInfo = () => dispatch => {
 
   return fetch(ABOUT_ENDPOINT)
     .then(res => res.json())
-    .then(data => {
-      dispatch(getAbout(data));
+    .then(event => {
+      dispatch(getAbout(event));
     })
     .catch(error => dispatch(getAboutError(error)));
 };

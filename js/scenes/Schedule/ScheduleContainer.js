@@ -24,7 +24,6 @@ class ScheduleContainer extends Component {
 
   render() {
     const formattedSchedule = formatSessionData(this.props.data);
-
     return <Schedule data={formattedSchedule} faves={this.props.faves} />;
   }
 }

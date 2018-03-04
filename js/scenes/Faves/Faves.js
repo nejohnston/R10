@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Text, View, SectionList, TouchableHighlight } from "react-native";
+import { View } from "react-native";
 import styles from "./styles";
 import EventList from "../../components/EventList/EventList";
 
