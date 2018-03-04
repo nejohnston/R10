@@ -13,7 +13,8 @@ export const popSpeaker = () => {
   Store.dispatch(NavigationActions.pop("root"));
 };
 
-export const goToSession = (currentNavigatorUID, data) => {
+export const goToSession = data => {
+  let currentNavigatorUID = Store.getState().navigation.currentNavigatorUID;
   Store.dispatch(
     NavigationActions.push(
       currentNavigatorUID,
