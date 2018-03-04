@@ -24,7 +24,6 @@ function _filterFaves(faves, data) {
 export const formatAndFilterFaves = (faves, data) => {
   const arrayOfFaves = Object.values(faves);
   const filteredFaves = formatSessionData(_filterFaves(arrayOfFaves, data));
-  console.log(filteredFaves);
   return filteredFaves;
 };
 

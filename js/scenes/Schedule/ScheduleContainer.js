@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import Schedule from "./Schedule";
 import { fetchScheduleInfo } from "../../redux/modules/schedule";
 
 import EventList from "../../components/EventList/EventList";
@@ -38,7 +37,8 @@ const mapStateToProps = state => ({
 
 ScheduleContainer.propTypes = {
   dispatch: PropTypes.func,
-  sessionData: PropTypes.array
+  sessionData: PropTypes.array,
+  data: PropTypes.array
 };
 
 export default connect(mapStateToProps)(ScheduleContainer);

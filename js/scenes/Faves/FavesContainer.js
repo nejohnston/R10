@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Text } from "react-native";
 import EventList from "../../components/EventList/EventList";
-import { fetchSpeaker } from "../../redux/modules/speaker";
 import { connect } from "react-redux";
 import { getRealmFaves } from "../../redux/modules/faves";
-import { formatSessionData, formatAndFilterFaves } from "../../config/helpers";
+import { formatAndFilterFaves } from "../../config/helpers";
 
 class FavesContainer extends Component {
   constructor(props) {
@@ -23,10 +21,8 @@ class FavesContainer extends Component {
   }
 
   render() {
-    console.log(this.props.faves);
     const { faves, data } = this.props;
     const faveSessions = formatAndFilterFaves(faves, data);
-    console.log(faveSessions);
 
     return <EventList faves={faves} data={faveSessions} />;
   }
