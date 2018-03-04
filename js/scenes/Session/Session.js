@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Text, View, TouchableHighlight, Button } from "react-native";
+import { Text, View, TouchableHighlight, Button, Image } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
 import styles from "./styles";
@@ -25,6 +25,7 @@ const Session = ({ data, speakerData }) => (
       <View>
         <Text>Presented By:</Text>
       </View>
+      <Image source={{ uri: `${speakerData.url}` }} />
       <Text>{speakerData.name}</Text>
     </TouchableHighlight>
     <Button title="Remove Fave" onPress={() => deleteFave(data.session_id)} />
