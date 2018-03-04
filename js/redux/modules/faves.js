@@ -18,7 +18,7 @@ export const getFaves = faves => ({
   payload: faves
 });
 
-export const favedOrNot = (isFaved, session_id) => ({
+export const favedOrNot = (session_id, isFaved) => ({
   type: FAVED_OR_NOT,
   session_id: session_id,
   isFaved: isFaved
@@ -63,7 +63,7 @@ export default (
       };
     }
     case FAVED_OR_NOT: {
-      if (action.onOrOff) createFave(action.session_id);
+      if (action.isFaved) createFave(action.session_id);
       else deleteFave(action.session_id);
       const faves = queryFave();
       return {

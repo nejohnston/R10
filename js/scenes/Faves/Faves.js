@@ -3,22 +3,11 @@ import PropTypes from "prop-types";
 
 import { Text, View, SectionList, TouchableHighlight } from "react-native";
 import styles from "./styles";
+import EventList from "../../components/EventList/EventList";
 
 const Faves = ({ faves, data }) => (
   <View>
-    <SectionList
-      sections={faves}
-      renderItem={({ item }) => (
-        <TouchableHighlight>
-          <View>
-            <Text>{item.title}</Text>
-            <Text>{item.location}</Text>
-          </View>
-        </TouchableHighlight>
-      )}
-      keyExtractor={(item, index) => index}
-      stickySectionHeadersEnabled={false}
-    />
+    <EventList faves={faves} data={data} />
   </View>
 );
 

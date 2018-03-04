@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import { fetchScheduleInfo } from "../../redux/modules/schedule";
 
-import EventList from "../../components/EventList/EventList";
+import Schedule from "./Schedule";
 import { formatSessionData } from "../../config/helpers";
 
 class ScheduleContainer extends Component {
@@ -23,11 +23,9 @@ class ScheduleContainer extends Component {
   }
 
   render() {
-    console.log(this.props.data);
     const formattedSchedule = formatSessionData(this.props.data);
-    console.log(formattedSchedule);
 
-    return <EventList data={formattedSchedule} faves={this.props.faves} />;
+    return <Schedule data={formattedSchedule} faves={this.props.faves} />;
   }
 }
 

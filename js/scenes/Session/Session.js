@@ -38,13 +38,13 @@ const Session = ({ data, speakerData, faves }) => (
         </View>
       </TouchableHighlight>
     )}
-    <TouchableHighlight>
-      <Button
-        title="Remove Fave"
-        onPress={() =>
-          favedOrNot(data.session_id, !faves.includes(data.session_id))
-        }
-      />
+    <TouchableHighlight
+      title="Remove Fave"
+      onPress={() =>
+        dispatch(favedOrNot(data.session_id, !faves.includes(data.session_id)))
+      }
+    >
+      <Text>her</Text>
     </TouchableHighlight>
   </View>
 );

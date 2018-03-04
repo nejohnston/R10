@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import EventList from "../../components/EventList/EventList";
 import { connect } from "react-redux";
 import { getRealmFaves } from "../../redux/modules/faves";
 import { formatAndFilterFaves } from "../../config/helpers";
+import Faves from "./Faves";
 
 class FavesContainer extends Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class FavesContainer extends Component {
     const { faves, data } = this.props;
     const faveSessions = formatAndFilterFaves(faves, data);
 
-    return <EventList faves={faves} data={faveSessions} />;
+    return <Faves faves={faves} data={faveSessions} />;
   }
 }
 
