@@ -3,6 +3,7 @@ import { queryFave } from "../../config/model";
 // Actions
 const GET_FAVES_LOADING = "GET_FAVES_LOADING";
 const GET_FAVES = "GET_FAVES";
+const FAVED_OR_NOT = "FAVED_OR_NOT";
 const GET_FAVES_ERROR = "GET_FAVES_ERROR";
 
 // Actions creator
@@ -15,6 +16,12 @@ export const getFavesLoading = isLoading => ({
 export const getFaves = faves => ({
   type: GET_FAVES,
   payload: faves
+});
+
+export const favedOrNot = (isFaved, session_id) => ({
+  type: FAVED_OR_NOT,
+  session_id: session_id,
+  isFaved: isFaved
 });
 
 export const getFavesError = error => ({

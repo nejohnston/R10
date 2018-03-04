@@ -18,7 +18,6 @@ class SessionContainer extends Component {
 
   componentDidMount() {
     this.props.dispatch(fetchSpeaker(this.props.route.params.data));
-    console.log(this.props.route.params.data);
   }
 
   render() {
