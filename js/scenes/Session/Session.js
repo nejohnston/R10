@@ -12,9 +12,6 @@ import { createFave, deleteFave } from "../../config/model";
 
 const Session = ({ data, speakerData }) => (
   <View>
-    <TouchableHighlight onPress={() => goToSpeaker(speakerData)}>
-      <Text>{data.description}</Text>
-    </TouchableHighlight>
     <TouchableHighlight>
       <Icon
         active
@@ -23,6 +20,12 @@ const Session = ({ data, speakerData }) => (
         size={30}
         color={"red"}
       />
+    </TouchableHighlight>
+    <TouchableHighlight onPress={() => goToSpeaker(speakerData)}>
+      <View>
+        <Text>Presented By:</Text>
+      </View>
+      <Text>{speakerData.name}</Text>
     </TouchableHighlight>
     <Button title="Remove Fave" onPress={() => deleteFave(data.session_id)} />
   </View>
