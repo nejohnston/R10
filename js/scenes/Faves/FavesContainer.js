@@ -5,7 +5,7 @@ import EventList from "../../components/EventList/EventList";
 import { fetchSpeaker } from "../../redux/modules/speaker";
 import { connect } from "react-redux";
 import { getRealmFaves } from "../../redux/modules/faves";
-import { filteredFaves } from "../../config/helpers";
+import { formatSessionData, formatAndFilterFaves } from "../../config/helpers";
 
 class FavesContainer extends Component {
   constructor(props) {
@@ -19,30 +19,30 @@ class FavesContainer extends Component {
   };
 
   componentDidMount() {
-    this.props.dispatch(getRealmFaves());
+    this.props.dispatch(getRealmFaves(this.props.data));
   }
 
   render() {
-    console.log(this.props.sessionData);
     console.log(this.props.faves);
-    const { faves, sessionData } = this.props;
-    const faveSessions = filteredFaves(faves, sessionData);
+    const { faves, data } = this.props;
+    const faveSessions = formatAndFilterFaves(faves, data);
+    console.log(faveSessions);
 
-    return <EventList faves={faves} faveSessions={faveSessions} />;
+    return <EventList faves={faves} data={faveSessions} />;
   }
 }
 
 const mapStateToProps = state => ({
   isLoading: state.faves.isLoading,
   faves: state.faves.faves,
-  sessionData: state.schedule.sessionData,
+  data: state.schedule.data,
   error: state.faves.error
 });
 
 FavesContainer.propTypes = {
   dispatch: PropTypes.func,
   faves: PropTypes.array,
-  sessionData: PropTypes.array
+  data: PropTypes.array
 };
 
 export default connect(mapStateToProps)(FavesContainer);

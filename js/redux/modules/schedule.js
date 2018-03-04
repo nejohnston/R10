@@ -10,9 +10,9 @@ export const getScheduleLoading = isLoading => ({
   type: GET_SCHEDULE_LOADING
 });
 
-export const getScheduleSessions = sessionData => ({
+export const getScheduleSessions = data => ({
   type: GET_SCHEDULE_SESSIONS,
-  payload: sessionData
+  payload: data
 });
 
 export const getScheduleError = error => ({
@@ -38,7 +38,7 @@ export const fetchScheduleInfo = () => dispatch => {
 export default (
   state = {
     isLoading: false,
-    sessionData: [],
+    data: [],
     error: ""
   },
   action
@@ -52,7 +52,7 @@ export default (
       return {
         ...state,
         isLoading: false,
-        sessionData: action.payload,
+        data: action.payload,
         error: ""
       };
     }

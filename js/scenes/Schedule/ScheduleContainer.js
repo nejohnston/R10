@@ -24,15 +24,15 @@ class ScheduleContainer extends Component {
   }
 
   render() {
-    const formattedSchedule = formatSessionData(this.props.sessionData);
+    const formattedSchedule = formatSessionData(this.props.data);
 
-    return <EventList sessionData={formattedSchedule} />;
+    return <EventList data={formattedSchedule} />;
   }
 }
 
 const mapStateToProps = state => ({
   isLoading: state.schedule.isLoading,
-  sessionData: state.schedule.sessionData,
+  data: state.schedule.data,
   error: state.schedule.error
 });
 

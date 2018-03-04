@@ -17,8 +17,15 @@ export const formatSessionData = sessions => {
     .sort((a, b) => a.title - b.title);
 };
 
-export const filteredFaves = (faves, sessions) => {
-  return sessions.includes(session => faves.includes(session.session_id));
+function _filterFaves(faves, data) {
+  return data.filter(event => faves.includes(event.session_id));
+}
+
+export const formatAndFilterFaves = (faves, data) => {
+  const arrayOfFaves = Object.values(faves);
+  const filteredFaves = formatSessionData(_filterFaves(arrayOfFaves, data));
+  console.log(filteredFaves);
+  return filteredFaves;
 };
 
 export const formatUnixDate = date => {

@@ -23,7 +23,8 @@ const Faves = ({ faves, data }) => (
 );
 
 Faves.propTypes = {
-  //   data: PropTypes.array
+  data: PropTypes.array,
+  faves: PropTypes.array
 };
 
 export default Faves;
