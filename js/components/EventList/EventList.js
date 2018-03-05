@@ -5,19 +5,23 @@ import { goToSession } from "../../config/navHelpers";
 
 import HeartIcon from "../HeartIcon/HeartIcon";
 import { Text, View, SectionList, TouchableHighlight } from "react-native";
-import styles from "./styles";
+import { styles } from "./styles";
 import { formatUnixDate } from "../../config/helpers";
 
 const EventList = ({ data, faves }) => (
-  <View>
+  <View style={styles.container}>
     <SectionList
       sections={data}
       renderItem={({ item }) => (
         <TouchableHighlight onPress={() => goToSession(item)}>
-          <View>
-            <Text>{item.title}</Text>
-            <Text>{item.location}</Text>
-            {faves.includes(item.session_id) && <HeartIcon />}
+          <View style={styles.sessionCard}>
+            <View style={styles.sessionMeta}>
+              <Text style={styles.sessionTitle}>{item.title}</Text>
+              <Text style={styles.sessionLocation}>{item.location}</Text>
+            </View>
+            <View style={styles.sessionHeart}>
+              {faves.includes(item.session_id) && <HeartIcon />}
+            </View>
           </View>
         </TouchableHighlight>
       )}
