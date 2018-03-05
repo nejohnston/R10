@@ -1,12 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Text, View, TouchableHighlight, Image } from "react-native";
+import { Text, View, TouchableHighlight, Image, Button } from "react-native";
 
 import HeartIcon from "../../components/HeartIcon/";
 import { styles } from "./styles";
 import { goToSpeaker } from "../../config/navHelpers";
 import { favedOrNot } from "../../redux/modules/faves";
-import { colors } from "../../config/styles";
 
 import { connect } from "react-redux";
 import { formatUnixDate } from "../../config/helpers";
@@ -29,7 +28,7 @@ const Session = ({ data, speakerData, faves, favedOrNot }) => (
     <View>
       <Text style={styles.description}>{data.description}</Text>
     </View>
-    <Text style={styles.presentedBy}>Presented By:</Text>
+    {speakerData && <Text style={styles.presentedBy}>Presented By:</Text>}
     {speakerData && (
       <TouchableHighlight onPress={() => goToSpeaker(speakerData)}>
         <View style={styles.speakerWrapper}>
@@ -44,15 +43,15 @@ const Session = ({ data, speakerData, faves, favedOrNot }) => (
       </TouchableHighlight>
     )}
     <View style={styles.removeButtonWrapper}>
-      <TouchableHighlight
+      <Button
         onPress={() =>
           favedOrNot(data.session_id, !faves.includes(data.session_id))
         }
-      >
-        <Text style={styles.removeButton}>
-          {faves.includes(data.session_id) ? "Remove Fave" : "Add As Fave"}
+        title={faves.includes(data.session_id) ? "Remove Fave" : "Add As Fave"}
+      />
+      {/* <Text style={styles.removeButton}>
         </Text>
-      </TouchableHighlight>
+      </TouchableHighlight> */}
     </View>
   </View>
 );

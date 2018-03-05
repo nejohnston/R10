@@ -6,20 +6,19 @@ import {
   TabNavigationItem as TabItem
 } from "@expo/ex-navigation";
 
-import { Text, StyleSheet } from "react-native";
+import { Text } from "react-native";
 
 import Icon from "react-native-vector-icons/Ionicons";
 
 import Router from "./routes";
-import { colors, typography } from "../config/styles";
+import { colors } from "../config/styles";
 import {
   scheduleIcon,
   aboutIcon,
   heartIcon,
   mapIcon
 } from "../config/iconHelpers";
-const { black, white, mediumGrey } = colors;
-const { fontMain, lightMain } = typography;
+const { white, mediumGrey } = colors;
 
 class Nav extends Component {
   renderTitle(isSelected, title) {

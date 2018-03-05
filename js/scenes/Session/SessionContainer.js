@@ -13,8 +13,8 @@ class SessionContainer extends Component {
 
   static route = {
     navigationBar: {
-      title: "Session",
-      renderBackground: () => <HeaderGradient />
+      title: "Session"
+      // renderBackground: () => <HeaderGradient />
     }
   };
 
