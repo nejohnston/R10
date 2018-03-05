@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Text, View, TouchableHighlight, Image } from "react-native";
+
 import HeartIcon from "../../components/HeartIcon/";
 import { styles } from "./styles";
 import { goToSpeaker } from "../../config/navHelpers";
@@ -11,34 +12,32 @@ import { connect } from "react-redux";
 import { formatUnixDate } from "../../config/helpers";
 
 const Session = ({ data, speakerData, faves, favedOrNot }) => (
-  <View>
-    <View style={styles.location}>
+  <View style={styles.container}>
+    <View style={styles.locationAndIcon}>
       <View>
-        <Text>{data.location}</Text>
+        <Text style={styles.locationText}>{data.location}</Text>
       </View>
-      <View>{faves.includes(data.session_id) && <HeartIcon size={16} />}</View>
+      <View>{faves.includes(data.session_id) && <HeartIcon />}</View>
     </View>
     <View>
-      <Text style={styles.sessionTime}>{formatUnixDate(data.start_time)}</Text>
+      <Text style={styles.title}>{data.title}</Text>
     </View>
     <View>
-      <Text>{data.title}</Text>
+      <Text style={styles.startTime}>{formatUnixDate(data.start_time)}</Text>
     </View>
     <View>
-      <Text>{data.description}</Text>
+      <Text style={styles.description}>{data.description}</Text>
     </View>
+    <Text style={styles.presentedBy}>Presented By:</Text>
     {speakerData && (
       <TouchableHighlight onPress={() => goToSpeaker(speakerData)}>
-        <Text>Presented By:</Text>
-        <View>
-          <View>
-            <Image
-              source={{ uri: speakerData.image }}
-              style={{ height: 70, width: 70, borderRadius: 35 }}
-            />
-          </View>
-          <View>
-            <Text>{speakerData.name}</Text>
+        <View style={styles.speakerWrapper}>
+          <Image
+            source={{ uri: speakerData.image }}
+            style={{ height: 70, width: 70, borderRadius: 35 }}
+          />
+          <View style={styles.speakerName}>
+            <Text style={styles.description}>{speakerData.name}</Text>
           </View>
         </View>
       </TouchableHighlight>
@@ -48,9 +47,7 @@ const Session = ({ data, speakerData, faves, favedOrNot }) => (
       onPress={() =>
         favedOrNot(data.session_id, !faves.includes(data.session_id))
       }
-    >
-      <Text>her</Text>
-    </TouchableHighlight>
+    />
   </View>
 );
 
