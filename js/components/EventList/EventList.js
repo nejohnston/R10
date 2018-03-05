@@ -3,9 +3,7 @@ import PropTypes from "prop-types";
 
 import { goToSession } from "../../config/navHelpers";
 
-import Icon from "react-native-vector-icons";
-
-import { faveIcon } from "../../config/iconHelpers";
+import HeartIcon from "../HeartIcon";
 
 import { Text, View, SectionList, TouchableHighlight } from "react-native";
 import styles from "./styles";
@@ -20,9 +18,7 @@ const EventList = ({ data, faves }) => (
           <View>
             <Text>{item.title}</Text>
             <Text>{item.location}</Text>
-            {faves.includes(item.session_id) && (
-              
-            )}
+            {faves.includes(item.session_id) && <HeartIcon />}
           </View>
         </TouchableHighlight>
       )}

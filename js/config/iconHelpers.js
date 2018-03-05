@@ -1,4 +1,3 @@
-import Icon from "react-native-vector-icons";
 import { Platform } from "react-native";
 
 export const faveIcon = Platform.select({
