@@ -6,6 +6,7 @@ import { fetchScheduleInfo } from "../../redux/modules/schedule";
 
 import Schedule from "./Schedule";
 import { formatSessionData } from "../../config/helpers";
+import { getRealmFaves } from "../../redux/modules/faves";
 
 class ScheduleContainer extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class ScheduleContainer extends Component {
 
   componentDidMount() {
     this.props.dispatch(fetchScheduleInfo());
+    this.props.dispatch(getRealmFaves());
   }
 
   render() {
