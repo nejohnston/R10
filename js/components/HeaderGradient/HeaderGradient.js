@@ -6,7 +6,7 @@ const HeaderGradient = () => (
   <LinearGradient
     start={{ x: 0.0, y: 0.25 }}
     end={{ x: 0.25, y: 1.0 }}
-    colors={[colors.Red, colors.Purple]}
+    colors={[colors.red, colors.purple]}
     style={{ flex: 1 }}
   />
 );

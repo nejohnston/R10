@@ -1,29 +1,26 @@
 import { StyleSheet, Dimensions } from "react-native";
-import { colors } from "../../config/styles";
+import { colors, typography } from "../../config/styles";
 
-const { mediumGrey, black, white } = colors;
-const { height, width } = Dimensions;
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "black"
+    backgroundColor: colors.black
   },
   header: {
     paddingTop: 30,
     flex: 0.2,
     flexDirection: "row"
   },
-  headerText: { color: "white" },
+  headerText: { color: colors.white },
   body: {
     flex: 1,
     marginHorizontal: 15,
-    backgroundColor: "white",
+    backgroundColor: colors.white,
     borderRadius: 25,
     marginBottom: 20
   },
   bodyText: {
-    color: "black"
+    color: colors.black,
+    fontFamily: typography.fontMain
   }
 });
-
-export default styles;

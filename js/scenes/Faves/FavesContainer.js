@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { getRealmFaves } from "../../redux/modules/faves";
 import { formatAndFilterFaves } from "../../config/helpers";
 import Faves from "./Faves";
+import HeaderGradient from "../../components/HeaderGradient";
 
 class FavesContainer extends Component {
   constructor(props) {

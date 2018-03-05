@@ -4,7 +4,7 @@ import LinearGradient from "react-native-linear-gradient";
 import { colors } from "../../config/styles";
 import { styles } from "./styles";
 
-const SessionFaveButton = ({ buttonText }) => (
+const SessionFaveButton = buttonText => (
   <LinearGradient
     colors={[colors.red, colors.purple]}
     style={styles.linearGradient}
