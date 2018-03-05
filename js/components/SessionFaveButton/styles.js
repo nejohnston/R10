@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet } from "react-native";
 import { colors, typography } from "../../config/styles";
 export const styles = StyleSheet.create({
   linearGradient: {
@@ -12,7 +12,6 @@ export const styles = StyleSheet.create({
     fontFamily: typography.fontMain,
     textAlign: "center",
     margin: 10,
-    color: "#ffffff",
-    backgroundColor: "transparent"
+    color: colors.white
   }
 });

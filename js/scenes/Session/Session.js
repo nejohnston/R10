@@ -10,6 +10,7 @@ import { colors } from "../../config/styles";
 
 import { connect } from "react-redux";
 import { formatUnixDate } from "../../config/helpers";
+import SessionFaveButton from "../../components/SessionFaveButton/SessionFaveButton";
 
 const Session = ({ data, speakerData, faves, favedOrNot }) => (
   <View style={styles.container}>
@@ -42,12 +43,20 @@ const Session = ({ data, speakerData, faves, favedOrNot }) => (
         </View>
       </TouchableHighlight>
     )}
-    <TouchableHighlight
-      title="Remove Fave"
-      onPress={() =>
-        favedOrNot(data.session_id, !faves.includes(data.session_id))
-      }
-    />
+    <View>
+      <TouchableHighlight
+        onPress={() =>
+          favedOrNot(data.session_id, !faves.includes(data.session_id))
+        }
+      >
+        {/* <SessionFaveButton
+          buttonText={
+            faves.includes(data.session_id) ? "Remove Fave" : "Add As Fave"
+          }
+        /> */}
+        <Text>hey</Text>
+      </TouchableHighlight>
+    </View>
   </View>
 );
 
