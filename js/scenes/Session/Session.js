@@ -1,14 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Text, View, TouchableHighlight, Button, Image } from "react-native";
+import { Text, View, TouchableHighlight, Image } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
 import styles from "./styles";
 import { goToSpeaker } from "../../config/navHelpers";
-import speaker from "../../redux/modules/speaker";
 import { heartIcon } from "../../config/iconHelpers";
-import { colors } from "../../config/styles";
-import { createFave, deleteFave } from "../../config/model";
 import { favedOrNot } from "../../redux/modules/faves";
 
 import { connect } from "react-redux";
