@@ -10,18 +10,16 @@ import { closeIcon } from "../../config/iconHelpers";
 const Speaker = ({ speakerData }) => (
   <View style={styles.container}>
     <View style={styles.header}>
-      <View>
-        <TouchableHighlight onPress={() => popSpeaker()}>
-          <Icon active name={closeIcon} size={40} color="white" />
-        </TouchableHighlight>
-      </View>
-      <View>
+      <TouchableHighlight style={styles.icon} onPress={() => popSpeaker()}>
+        <Icon active name={closeIcon} size={40} color="white" />
+      </TouchableHighlight>
+      <View style={styles.headerAbout}>
         <Text style={styles.headerText}>About this Speaker</Text>
       </View>
     </View>
     <View style={styles.body}>
       <Image style={styles.speakerAvatar} source={{ uri: speakerData.image }} />
-      <Text>{speakerData.name}</Text>
+      <Text style={styles.speakerName}>{speakerData.name}</Text>
       <Text style={styles.bodyText}>{speakerData.bio}</Text>
     </View>
   </View>

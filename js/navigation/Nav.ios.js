@@ -22,10 +22,34 @@ const { black, white, mediumGrey } = colors;
 const { fontMain, lightMain } = typography;
 
 class Nav extends Component {
+  renderTitle(isSelected, title) {
+    // selectively set title style (color) to be white if selected, otherwise grey
+    return (
+      <Text style={{ color: isSelected ? white : mediumGrey }}>{title}</Text>
+    );
+  }
+  renderIcon(isSelected, iconName) {
+    return (
+      <Icon
+        name={iconName}
+        style={{ color: isSelected ? white : mediumGrey }}
+      />
+    );
+  }
+  static route = {
+    navigationBar: {
+      visible: false
+    }
+  };
   render() {
     return (
       // Put your tab bar / tab items / stack navs here~~~~~~
-      <TabNavigation id="main" navigatorUID="main" initialTab="schedule">
+      <TabNavigation
+        id="main"
+        navigatorUID="main"
+        initialTab="schedule"
+        tabBarColor={colors.black}
+      >
         <TabItem
           id="schedule"
           title="Schedule"
@@ -75,20 +99,6 @@ class Nav extends Component {
           />
         </TabItem>
       </TabNavigation>
-    );
-  }
-  renderTitle(isSelected, title) {
-    // selectively set title style (color) to be white if selected, otherwise grey
-    return (
-      <Text style={{ color: isSelected ? white : mediumGrey }}>{title}</Text>
-    );
-  }
-  renderIcon(isSelected, iconName) {
-    return (
-      <Icon
-        name={iconName}
-        style={{ color: isSelected ? white : mediumGrey }}
-      />
     );
   }
 }

@@ -7,20 +7,50 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.black
   },
   header: {
-    paddingTop: 30,
-    flex: 0.2,
-    flexDirection: "row"
+    paddingTop: 15,
+    flex: 0.1,
+    flexDirection: "row",
+    justifyContent: "center"
   },
-  headerText: { color: colors.white },
+  icon: {
+    justifyContent: "flex-start"
+  },
+  headerText: {
+    color: colors.white,
+    textAlign: "center",
+    fontSize: 16,
+    fontFamily: typography.fontMain
+  },
+  headerAbout: {
+    alignSelf: "center"
+  },
   body: {
     flex: 1,
-    marginHorizontal: 15,
+    marginHorizontal: 10,
     backgroundColor: colors.white,
     borderRadius: 25,
-    marginBottom: 20
+    padding: 10
   },
   bodyText: {
     color: colors.black,
-    fontFamily: typography.fontMain
+    fontFamily: typography.fontLight,
+    fontSize: 18
+  },
+  speakerAvatar: {
+    height: 120,
+    width: 120,
+    borderRadius: 60,
+    alignSelf: "center",
+    marginBottom: 15
+  },
+  speakerName: {
+    fontSize: 20,
+    fontFamily: typography.fontMain,
+    marginBottom: 15,
+    textAlign: "center"
+  },
+  removeButtonWrapper: {
+    marginTop: 10,
+    alignSelf: "center"
   }
 });

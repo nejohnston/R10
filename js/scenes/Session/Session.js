@@ -43,18 +43,15 @@ const Session = ({ data, speakerData, faves, favedOrNot }) => (
         </View>
       </TouchableHighlight>
     )}
-    <View>
+    <View style={styles.removeButtonWrapper}>
       <TouchableHighlight
         onPress={() =>
           favedOrNot(data.session_id, !faves.includes(data.session_id))
         }
       >
-        {/* <SessionFaveButton
-          buttonText={
-            faves.includes(data.session_id) ? "Remove Fave" : "Add As Fave"
-          }
-        /> */}
-        <Text>hey</Text>
+        <Text style={styles.removeButton}>
+          {faves.includes(data.session_id) ? "Remove Fave" : "Add As Fave"}
+        </Text>
       </TouchableHighlight>
     </View>
   </View>
