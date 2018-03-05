@@ -1,5 +1,7 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 import { colors, typography } from "../../config/styles";
+
+const { height } = Dimensions;
 
 export const styles = StyleSheet.create({
   container: {
@@ -8,9 +10,10 @@ export const styles = StyleSheet.create({
   },
   header: {
     paddingTop: 15,
-    flex: 0.1,
+    height: height / 5,
     flexDirection: "row",
-    justifyContent: "center"
+    justifyContent: "space-around",
+    marginRight: 60
   },
   icon: {
     justifyContent: "flex-start"
