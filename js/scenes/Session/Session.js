@@ -1,25 +1,36 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Text, View, TouchableHighlight, Image } from "react-native";
-import Icon from "react-native-vector-icons/Ionicons";
-
-import styles from "./styles";
+import HeartIcon from "../../components/HeartIcon/";
+import { styles } from "./styles";
 import { goToSpeaker } from "../../config/navHelpers";
-import { heartIcon } from "../../config/iconHelpers";
 import { favedOrNot } from "../../redux/modules/faves";
 import { colors } from "../../config/styles";
 
 import { connect } from "react-redux";
+import { formatUnixDate } from "../../config/helpers";
 
 const Session = ({ data, speakerData, faves, favedOrNot }) => (
   <View>
-    {faves.includes(data.session_id) && (
-      <Icon name={heartIcon} size={30} color={colors.red} />
-    )}
+    <View style={styles.location}>
+      <View>
+        <Text>{data.location}</Text>
+      </View>
+      <View>{faves.includes(data.session_id) && <HeartIcon size={16} />}</View>
+    </View>
+    <View>
+      <Text style={styles.sessionTime}>{formatUnixDate(data.start_time)}</Text>
+    </View>
+    <View>
+      <Text>{data.title}</Text>
+    </View>
+    <View>
+      <Text>{data.description}</Text>
+    </View>
     {speakerData && (
       <TouchableHighlight onPress={() => goToSpeaker(speakerData)}>
+        <Text>Presented By:</Text>
         <View>
-          <Text>Presented By:</Text>
           <View>
             <Image
               source={{ uri: speakerData.image }}

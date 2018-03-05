@@ -20,7 +20,7 @@ const EventList = ({ data, faves }) => (
               <Text style={styles.sessionLocation}>{item.location}</Text>
             </View>
             <View style={styles.sessionHeart}>
-              {faves.includes(item.session_id) && <HeartIcon size={10} />}
+              {faves.includes(item.session_id) && <HeartIcon size={16} />}
             </View>
           </View>
         </TouchableHighlight>
