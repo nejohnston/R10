@@ -24,7 +24,12 @@ class Nav extends Component {
   render() {
     return (
       // Put your tab bar / tab items / stack navs here~~~~~~
-      <DrawerNavigation id="main" navigatorUID="main" initialItem="schedule">
+      <DrawerNavigation
+        id="main"
+        navigatorUID="main"
+        initialItem="schedule"
+        tabBarColor={colors.black}
+      >
         <DrawerNavigationItem
           id="schedule"
           title="Schedule"

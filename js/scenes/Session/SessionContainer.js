@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Session from "./Session";
 import { fetchSpeaker } from "../../redux/modules/speaker";
 import { connect } from "react-redux";
+import HeaderGradient from "../../components/HeaderGradient";
 
 class SessionContainer extends Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class SessionContainer extends Component {
 
   static route = {
     navigationBar: {
-      title: "Session"
+      title: "Session",
+      renderBackground: () => <HeaderGradient />
     }
   };
 
