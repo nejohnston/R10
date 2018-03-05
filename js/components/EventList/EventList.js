@@ -18,15 +18,11 @@ const EventList = ({ data, faves }) => (
       renderItem={({ item }) => (
         <TouchableHighlight onPress={() => goToSession(item)}>
           <View>
-            <View>
-              <Text>{item.title}</Text>
-              <Text>{item.location}</Text>
-            </View>
-            <View>
-              {faves.includes(data.session_id) && (
-                <Icon active name={faveIcon} size={30} color={"red"} />
-              )}
-            </View>
+            <Text>{item.title}</Text>
+            <Text>{item.location}</Text>
+            {faves.includes(item.session_id) && (
+              
+            )}
           </View>
         </TouchableHighlight>
       )}
