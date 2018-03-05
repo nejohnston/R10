@@ -1,6 +1,6 @@
 import { Platform } from "react-native";
 
-export const faveIcon = Platform.select({
+export const heartIcon = Platform.select({
   ios: "ios-heart",
   android: "md-heart"
 });

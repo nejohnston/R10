@@ -6,7 +6,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 import styles from "./styles";
 import { goToSpeaker } from "../../config/navHelpers";
 import speaker from "../../redux/modules/speaker";
-import { faveIcon } from "../../config/iconHelpers";
+import { heartIcon } from "../../config/iconHelpers";
 import { colors } from "../../config/styles";
 import { createFave, deleteFave } from "../../config/model";
 import { favedOrNot } from "../../redux/modules/faves";
@@ -16,7 +16,7 @@ import { connect } from "react-redux";
 const Session = ({ data, speakerData, faves, favedOrNot }) => (
   <View>
     {faves.includes(data.session_id) && (
-      <Icon name={faveIcon} size={30} color={"red"} />
+      <Icon name={heartIcon} size={30} color={"red"} />
     )}
     {speakerData && (
       <TouchableHighlight onPress={() => goToSpeaker(speakerData)}>

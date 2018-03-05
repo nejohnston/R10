@@ -15,7 +15,7 @@ import { colors, typography } from "../config/styles";
 import {
   scheduleIcon,
   aboutIcon,
-  faveIcon,
+  heartIcon,
   mapIcon
 } from "../config/iconHelpers";
 const { black, white, mediumGrey } = colors;
@@ -54,7 +54,7 @@ class Nav extends Component {
           id="faves"
           title="Faves"
           renderTitle={this.renderTitle}
-          renderIcon={isSelected => this.renderIcon(isSelected, faveIcon)}
+          renderIcon={isSelected => this.renderIcon(isSelected, heartIcon)}
         >
           <StackNavigation
             id="faves"
