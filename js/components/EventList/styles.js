@@ -5,12 +5,30 @@ export const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.lightGrey
   },
+  sessionTime: {
+    marginLeft: 14,
+    fontFamily: typography.fontMain,
+    marginVertical: 3
+  },
   sessionCard: {
     justifyContent: "space-between",
     flexDirection: "row",
     backgroundColor: colors.white,
-    padding: 10
+    padding: 14,
+    marginBottom: 1
   },
-  sessionTitle: { color: colors.mediumGrey, fontSize: 20 },
-  sessionLocation: { color: colors.lightGrey }
+  sessionTitle: {
+    color: colors.black,
+    fontSize: 17,
+    fontFamily: typography.fontMain,
+    marginBottom: 6
+  },
+  sessionLocation: {
+    color: colors.mediumGrey,
+    fontFamily: typography.lightMain,
+    fontSize: 14
+  },
+  sessionHeart: {
+    justifyContent: "flex-end"
+  }
 });

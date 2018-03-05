@@ -20,13 +20,14 @@ const EventList = ({ data, faves }) => (
               <Text style={styles.sessionLocation}>{item.location}</Text>
             </View>
             <View style={styles.sessionHeart}>
-              {faves.includes(item.session_id) && <HeartIcon />}
+              {faves.includes(item.session_id) && <HeartIcon size={10} />}
             </View>
           </View>
         </TouchableHighlight>
       )}
       renderSectionHeader={({ section }) => (
-        <Text>{formatUnixDate(section.title)}</Text>
+        <Text style={styles.sessionTime}>{formatUnixDate(section.title)}</Text>
+        // <View></View>
       )}
       keyExtractor={(item, index) => index}
       stickySectionHeadersEnabled={false}
