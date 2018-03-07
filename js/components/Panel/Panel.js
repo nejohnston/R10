@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableHighlight,
+  Animated
+} from "react-native";
 import { addIcon, subtractIcon } from "../../config/iconHelpers";
 
 class Panel extends Component {
@@ -22,10 +29,10 @@ class Panel extends Component {
   toggle() {}
 
   render() {
-    let icon = this.icons["down"];
+    let icon = this.icons.subtract;
 
     if (this.state.expanded) {
-      icon = this.icons["up"]; //Step 4
+      icon = this.icons.subtract; //Step 4
     }
 
     //Step 5
