@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00A57F11204F78A7004CF47E /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 002F9DDE204F74CA00F43DD6 /* libBVLinearGradient.a */; };
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
 		00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302C01ABCB91800DB3ED1 /* libRCTImage.a */; };
@@ -39,7 +40,6 @@
 		2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */; };
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* R10Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* R10Tests.m */; };
-		432D1C17B9FC492D8F5589F9 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5B0E49CADB44AD8434D9BB /* libBVLinearGradient.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		63E9E2E6AECD43D780A599A5 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF7A498E608947E1A432DD52 /* Foundation.ttf */; };
 		7135F84339E84C49846992F4 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20BB769E7E3346E18B7545D9 /* Octicons.ttf */; };
@@ -437,11 +437,11 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				00A57F11204F78A7004CF47E /* libBVLinearGradient.a in Frameworks */,
 				A259C5EF80E44A53A18064BC /* libRNVectorIcons.a in Frameworks */,
 				F6DAE2DA979E4583902E18E6 /* libRealmReact.a in Frameworks */,
 				93F46EEACECB4210879BC128 /* libc++.tbd in Frameworks */,
 				05178C5504C8456D8D0ACABB /* libz.tbd in Frameworks */,
-				432D1C17B9FC492D8F5589F9 /* libBVLinearGradient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1436,6 +1436,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = R10;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1461,6 +1462,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = R10;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
