@@ -38,6 +38,10 @@ const mapStateToProps = state => ({
   error: state.about.error
 });
 
-// AboutContainer.propTypes
+AboutContainer.propTypes = {
+  aboutData: PropTypes.array,
+  dispatch: PropTypes.func,
+  isLoading: PropTypes.bool
+};
 
 export default connect(mapStateToProps)(AboutContainer);

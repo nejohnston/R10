@@ -6,9 +6,11 @@ import {
   DrawerNavigationItem
 } from "@expo/ex-navigation";
 
-// Treat the DrawerNavigationLayout route like any other route -- you may want to set
-// it as the intiial route for a top-level StackNavigation
-import { Text, StyleSheet } from "react-native";
+// Treat the DrawerNavigationLayout route like any other route
+// -- you may want to set it as the intiial route for a
+// top-level StackNavigation
+
+import { Text } from "react-native";
 
 import Icon from "react-native-vector-icons/Ionicons";
 
