@@ -28,9 +28,12 @@ class Nav extends Component {
     );
   }
   renderIcon(isSelected, iconName) {
+    const iconSize = 30;
+
     return (
       <Icon
         name={iconName}
+        size={iconSize}
         style={{ color: isSelected ? white : mediumGrey }}
       />
     );
