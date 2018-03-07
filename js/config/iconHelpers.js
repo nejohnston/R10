@@ -5,6 +5,11 @@ export const addIcon = Platform.select({
   android: "md-add"
 });
 
+export const subtractIcon = Platform.select({
+  ios: "ios-remove",
+  android: "md-remove"
+});
+
 export const heartIcon = Platform.select({
   ios: "ios-heart",
   android: "md-heart"
