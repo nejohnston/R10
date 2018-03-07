@@ -9,6 +9,8 @@ import {
 } from "react-native";
 import { addIcon, subtractIcon } from "../../config/iconHelpers";
 
+import { styles } from "./styles";
+
 class Panel extends Component {
   constructor(props) {
     super(props);
