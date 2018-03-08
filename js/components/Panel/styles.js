@@ -1,4 +1,4 @@
-import React from "react";
+import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
@@ -15,13 +15,19 @@ export const styles = StyleSheet.create({
     color: "#2a2f43",
     fontWeight: "bold"
   },
-  button: {},
-  buttonImage: {
-    width: 30,
-    height: 25
-  },
   body: {
     padding: 10,
     paddingTop: 0
+  },
+  bodyText: {
+    fontSize: 16,
+    lineHeight: 20,
+    marginBottom: 20,
+    letterSpacing: 1.5
+  },
+  descriptionTitle: {
+    color: "#C8A2C8",
+    marginBottom: 20,
+    fontSize: 16
   }
 });

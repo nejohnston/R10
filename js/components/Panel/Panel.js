@@ -1,13 +1,19 @@
 import React, { Component } from "react";
+import PropTypes from "react";
 import {
   StyleSheet,
   Text,
   View,
   Image,
-  TouchableHighlight,
-  Animated
+  TouchableOpacity,
+  Animated,
+  LayoutAnimation
 } from "react-native";
-import { addIcon, subtractIcon } from "../../config/iconHelpers";
+import {
+  addIcon,
+  subtractIcon
+} from "../../config/iconHelpers";
+import Icon from "react-native-vector-icons/Ionicons";
 
 import { styles } from "./styles";
 
@@ -15,46 +21,53 @@ class Panel extends Component {
   constructor(props) {
     super(props);
 
-    this.icons = {
-      //Step 2
-      add: { addIcon },
-      subtract: { subtractIcon }
-    };
-
     this.state = {
       //Step 3
-      title: props.title,
-      expanded: true
+      expanded: false
     };
+    this._onPress = this._onPress.bind(this);
   }
 
-  toggle() {}
+  _onPress = () => {
+    LayoutAnimation.easeInEaseOut();
+    this.setState({
+      expanded: !this.state.expanded
+    });
+  };
 
   render() {
-    let icon = this.icons.subtract;
-
-    if (this.state.expanded) {
-      icon = this.icons.subtract; //Step 4
-    }
-
+    const { description, title } = this.props;
     //Step 5
     return (
-      <View style={styles.container}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>{this.state.title}</Text>
-          <TouchableHighlight
-            style={styles.button}
-            onPress={this.toggle.bind(this)}
-            underlayColor="#f1f1f1"
-          >
-            <Image style={styles.buttonImage} source={icon} />
-          </TouchableHighlight>
-        </View>
+      <TouchableOpacity onPress={this._onPress}>
+        <Animated.Text
+          style={styles.descriptionTitle}
+        >
+          <Icon
+            name={
+              this.state.expanded
+                ? addIcon
+                : subtractIcon
+            }
+            size={20}
+            style={styles.icon}
+          />
+          {title}
+        </Animated.Text>
 
-        <View style={styles.body}>{this.props.children}</View>
-      </View>
+        {this.state.expanded && (
+          <Text style={styles.bodyText}>
+            {description}
+          </Text>
+        )}
+      </TouchableOpacity>
     );
   }
 }
+
+Panel.propTypes = {
+  // title: PropTypes.string.isRequired,
+  // description: PropTypes.string.isRequired
+};
 
 export default Panel;

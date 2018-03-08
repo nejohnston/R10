@@ -1,3 +1,3 @@
-import Accordian from "./Accordian";
+import Panel from "./Panel";
 
-export default Accordian;
+export default Panel;
