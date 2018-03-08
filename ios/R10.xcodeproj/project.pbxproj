@@ -44,6 +44,7 @@
 		63E9E2E6AECD43D780A599A5 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF7A498E608947E1A432DD52 /* Foundation.ttf */; };
 		7135F84339E84C49846992F4 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20BB769E7E3346E18B7545D9 /* Octicons.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		88030DD3D2CEBEAE3A73555B /* libPods-R10.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DD4045070C4E2252D0D687 /* libPods-R10.a */; };
 		93F46EEACECB4210879BC128 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F8983AAAE0AD4A67BB440228 /* libc++.tbd */; };
 		A259C5EF80E44A53A18064BC /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F4369CA1844A2B9D60A1A1 /* libRNVectorIcons.a */; };
 		AA32111874A145319E5F18F8 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2A9FB11F6F04ED088E8E780 /* Montserrat-Light.ttf */; };
@@ -385,6 +386,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = R10/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = R10/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		167BEA8E1B17FDBE6B505933 /* Pods-R10.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R10.release.xcconfig"; path = "Pods/Target Support Files/Pods-R10/Pods-R10.release.xcconfig"; sourceTree = "<group>"; };
 		20BB769E7E3346E18B7545D9 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		20F063902FA44979BA08767B /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Regular.ttf"; path = "../js/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		2AD3D9EEAEE24F88B0E662AE /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
@@ -406,6 +408,8 @@
 		CAB5161530664AFC84E47508 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
 		CD5B711522134B82B6CCDCCD /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		DF7A498E608947E1A432DD52 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		E274E1EA9B42F229D0EEF6FB /* Pods-R10.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R10.debug.xcconfig"; path = "Pods/Target Support Files/Pods-R10/Pods-R10.debug.xcconfig"; sourceTree = "<group>"; };
+		E5DD4045070C4E2252D0D687 /* libPods-R10.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-R10.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F61D39FC074D04A3A79CD0 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		F8983AAAE0AD4A67BB440228 /* libc++.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		FB5B0E49CADB44AD8434D9BB /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
@@ -442,6 +446,7 @@
 				F6DAE2DA979E4583902E18E6 /* libRealmReact.a in Frameworks */,
 				93F46EEACECB4210879BC128 /* libc++.tbd in Frameworks */,
 				05178C5504C8456D8D0ACABB /* libz.tbd in Frameworks */,
+				88030DD3D2CEBEAE3A73555B /* libPods-R10.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,12 +626,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		194E776F49F69E471F8ABEC0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E274E1EA9B42F229D0EEF6FB /* Pods-R10.debug.xcconfig */,
+				167BEA8E1B17FDBE6B505933 /* Pods-R10.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 				F8983AAAE0AD4A67BB440228 /* libc++.tbd */,
 				6453611A67F24315B3DB4557 /* libz.tbd */,
+				E5DD4045070C4E2252D0D687 /* libPods-R10.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -690,6 +705,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				C40C8B64DE1440CA86E6205C /* Resources */,
 				00FFB854204DEAAA00B3A84E /* Recovered References */,
+				194E776F49F69E471F8ABEC0 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -761,10 +777,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "R10" */;
 			buildPhases = (
+				7863F1EB4E9BA40A62EEC158 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				9722C5D53B95AF5BDD76B67B /* [CP] Embed Pods Frameworks */,
+				4FDC873319BAFA5CF04FFFC4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1284,6 +1303,57 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
+		4FDC873319BAFA5CF04FFFC4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-R10/Pods-R10-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-R10/Pods-R10-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7863F1EB4E9BA40A62EEC158 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-R10-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9722C5D53B95AF5BDD76B67B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-R10/Pods-R10-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1416,6 +1486,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E274E1EA9B42F229D0EEF6FB /* Pods-R10.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1443,6 +1514,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 167BEA8E1B17FDBE6B505933 /* Pods-R10.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
