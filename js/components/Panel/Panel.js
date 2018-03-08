@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "react";
 import {
-  StyleSheet,
   Text,
-  View,
-  Image,
   TouchableOpacity,
   Animated,
   LayoutAnimation

@@ -13,7 +13,8 @@ export const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     color: "#2a2f43",
-    fontWeight: "bold"
+    fontWeight: "bold",
+    paddingLeft: 10
   },
   body: {
     padding: 10,
