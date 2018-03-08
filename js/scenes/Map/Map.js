@@ -1,6 +1,10 @@
 import React from "react";
-import MapView from "react-native-maps";
+import MapView, {
+  Marker
+} from "react-native-maps";
 import { StyleSheet } from "react-native";
+
+import { MapPin } from "../../assets/images/map_pin.png";
 
 const styles = StyleSheet.create({
   map: {
@@ -24,7 +28,12 @@ const Map = () => {
     <MapView
       style={styles.map}
       initialRegion={markerLocation}
-    />
+    >
+      <Marker
+        coordinate={markerLocation}
+        image={require("../../assets/images/map_pin.png")}
+      />
+    </MapView>
   );
 };
 
