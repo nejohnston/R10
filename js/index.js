@@ -5,8 +5,6 @@
  */
 
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
-import AboutContainer from "./scenes/About/AboutContainer";
 import Router from "./navigation/routes";
 import {
   NavigationProvider,
@@ -19,16 +17,22 @@ import Store from "./redux/store";
 
 export default class App extends Component {
   render() {
-    const navigationContext = new NavigationContext({
-      router: Router,
-      store: Store
-    });
+    const navigationContext = new NavigationContext(
+      {
+        router: Router,
+        store: Store
+      }
+    );
     return (
       <Provider store={Store}>
-        <NavigationProvider context={navigationContext}>
+        <NavigationProvider
+          context={navigationContext}
+        >
           <StackNavigation
             navigatorUID="root"
-            initialRoute={Router.getRoute("layout")}
+            initialRoute={Router.getRoute(
+              "layout"
+            )}
           />
         </NavigationProvider>
       </Provider>

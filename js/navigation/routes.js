@@ -6,6 +6,7 @@ import ScheduleContainer from "../scenes/Schedule/ScheduleContainer";
 import SessionContainer from "../scenes/Session/SessionContainer";
 import SpeakerContainer from "../scenes/Speaker/SpeakerContainer";
 import FavesContainer from "../scenes/Faves/FavesContainer";
+import MapContainer from "../scenes/Map";
 
 const Router = createRouter(() => ({
   layout: () => Nav,
@@ -13,7 +14,8 @@ const Router = createRouter(() => ({
   schedule: () => ScheduleContainer,
   session: () => SessionContainer,
   speaker: () => SpeakerContainer,
-  faves: () => FavesContainer
+  faves: () => FavesContainer,
+  map: () => MapContainer
 }));
 
 export default Router;
