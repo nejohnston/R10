@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import store from "../../redux/store";
-import { View, ActivityIndicator } from "react-native";
+import {
+  View,
+  ActivityIndicator
+} from "react-native";
 
 import About from "./About";
 import styles from "./styles";
@@ -24,7 +26,10 @@ class AboutContainer extends Component {
   render() {
     return this.props.isLoading ? (
       <View>
-        <ActivityIndicator size="large" style={styles.activityIndicator} />
+        <ActivityIndicator
+          size="large"
+          style={styles.activityIndicator}
+        />
       </View>
     ) : (
       <About data={this.props.aboutData} />
@@ -44,4 +49,6 @@ AboutContainer.propTypes = {
   isLoading: PropTypes.bool
 };
 
-export default connect(mapStateToProps)(AboutContainer);
+export default connect(mapStateToProps)(
+  AboutContainer
+);
