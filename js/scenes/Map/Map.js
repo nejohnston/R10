@@ -6,7 +6,10 @@ import MapView, {
 } from "react-native-maps";
 import { StyleSheet, Text } from "react-native";
 
-import { locationCoordinates } from "../../config/locationCoordinates";
+import {
+  locationCoordinates,
+  region
+} from "../../config/locationCoordinates";
 
 // import { MapPin } from "../../assets/images/map_pin.png";
 
@@ -20,7 +23,12 @@ const styles = StyleSheet.create({
   }
 });
 
-const markerLocation = {};
+const markerLocation = {
+  latitude: 49.263348,
+  longitude: -123.138128,
+  latitudeDelta: 0.0922,
+  longitudeDelta: 0.0421
+};
 
 // const markers: [
 //   {
