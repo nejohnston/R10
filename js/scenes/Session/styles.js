@@ -1,5 +1,11 @@
-import { StyleSheet, Dimensions } from "react-native";
-import { colors, typography } from "../../config/styles";
+import {
+  StyleSheet,
+  Dimensions
+} from "react-native";
+import {
+  colors,
+  typography
+} from "../../config/styles";
 
 export const styles = StyleSheet.create({
   container: {
@@ -51,5 +57,20 @@ export const styles = StyleSheet.create({
   speakerName: {
     alignSelf: "center",
     marginLeft: 10
+  },
+
+  // styles for the add/remove button
+  // linearGradient: {
+  //   flex: 1,
+  //   paddingLeft: 15,
+  //   paddingRight: 15,
+  //   borderRadius: 5
+  // },
+  buttonText: {
+    fontSize: 18,
+    fontFamily: typography.fontMain,
+    textAlign: "center",
+    margin: 10,
+    color: colors.white
   }
 });

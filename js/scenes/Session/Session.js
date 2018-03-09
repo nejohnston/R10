@@ -9,14 +9,20 @@ import {
   TouchableOpacity
 } from "react-native";
 
+import LinearGradient from "react-native-linear-gradient";
+import { colors } from "../../config/styles";
+
 import HeartIcon from "../../components/HeartIcon/";
 import { styles } from "./styles";
-import { goToSpeaker } from "../../config/navHelpers";
+import {
+  goToSpeaker,
+  goToMap
+} from "../../config/navHelpers";
 import { favedOrNot } from "../../redux/modules/faves";
 
 import { connect } from "react-redux";
 import { formatUnixDate } from "../../config/helpers";
-import { SessionFaveButton } from "../../components/SessionFaveButton/SessionFaveButton";
+import SessionFaveButton from "../../components/SessionFaveButton/SessionFaveButton";
 
 const Session = ({
   data,
@@ -30,6 +36,11 @@ const Session = ({
         <Text style={styles.locationText}>
           {data.location}
         </Text>
+        <TouchableOpacity
+          onPress={() => goToMap(data)}
+        >
+          <Text>Go to map</Text>
+        </TouchableOpacity>
       </View>
       <View>
         {faves.includes(data.session_id) && (
@@ -38,9 +49,7 @@ const Session = ({
       </View>
     </View>
     <View>
-      <Text style={styles.title}>
-        {data.title}
-      </Text>
+      <Text style={styles.title}>{data.title}</Text>
     </View>
     <View>
       <Text style={styles.startTime}>
@@ -79,21 +88,27 @@ const Session = ({
       </TouchableHighlight>
     )}
     <View style={styles.removeButtonWrapper}>
-      <TouchableOpacity
-        onPress={() =>
-          favedOrNot(
-            data.session_id,
-            !faves.includes(data.session_id)
-          )
-        }
-        title={
-          faves.includes(data.session_id)
-            ? "Remove Fave"
-            : "Add As Fave"
-        }
+      <LinearGradient
+        colors={[colors.blue, colors.purple]}
+        start={{ x: 0.0, y: 0.25 }}
+        end={{ x: 0.5, y: 1.0 }}
+        locations={[0, 0.5, 0.6]}
       >
-        {/* <SessionFaveButton /> */}
-      </TouchableOpacity>
+        <Button
+          onPress={() =>
+            favedOrNot(
+              data.session_id,
+              !faves.includes(data.session_id)
+            )
+          }
+          title={
+            faves.includes(data.session_id)
+              ? "Remove Fave"
+              : "Add As Fave"
+          }
+          color={colors.white}
+        />
+      </LinearGradient>
     </View>
   </View>
 );

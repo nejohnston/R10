@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+
+import { connect } from "react-redux";
+
 import Map from "./Map";
-import { Text } from "react-native";
+
 import HeaderGradient from "../../components/HeaderGradient";
 import {
   colors,
@@ -9,6 +12,10 @@ import {
 } from "../../config/styles";
 
 class MapContainer extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   static route = {
     navigationBar: {
       title: "Map",
@@ -21,8 +28,16 @@ class MapContainer extends Component {
   };
 
   render() {
-    return <Map />;
+    return <Map data={this.props.data} />;
   }
 }
+
+// const mapStateToProps = state => ({
+//   data: state.schedule.data
+// });
+
+MapContainer.propTypes = {
+  data: PropTypes.array
+};
 
 export default MapContainer;

@@ -1,8 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 import MapView, {
-  Marker
+  Marker,
+  Callout
 } from "react-native-maps";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Text } from "react-native";
 
 // import { MapPin } from "../../assets/images/map_pin.png";
 
@@ -23,7 +25,7 @@ const markerLocation = {
   longitudeDelta: 0.0421
 };
 
-const Map = () => {
+const Map = ({ data }) => {
   return (
     <MapView
       style={styles.map}
@@ -32,9 +34,17 @@ const Map = () => {
       <Marker
         coordinate={markerLocation}
         image={require("../../assets/images/map_pin.png")}
+        onPress={e => console.log(e.nativeEvent)}
       />
+      <Callout tooltip={true}>
+        <Text>hey</Text>
+      </Callout>
     </MapView>
   );
+};
+
+Map.propTypes = {
+  data: PropTypes.array
 };
 
 export default Map;
