@@ -5,6 +5,13 @@ import { connect } from "react-redux";
 import { fetchScheduleInfo } from "../../redux/modules/schedule";
 
 import Schedule from "./Schedule";
+
+import HeaderGradient from "../../components/HeaderGradient";
+import {
+  colors,
+  typography
+} from "../../config/styles";
+
 import { formatSessionData } from "../../config/helpers";
 import { getRealmFaves } from "../../redux/modules/faves";
 
@@ -15,7 +22,12 @@ class ScheduleContainer extends Component {
 
   static route = {
     navigationBar: {
-      title: "Schedule"
+      title: "Schedule",
+      tintColor: colors.white,
+      renderBackground: HeaderGradient,
+      titleStyle: {
+        fontFamily: typography.fontMain
+      }
     }
   };
 
@@ -25,9 +37,16 @@ class ScheduleContainer extends Component {
   }
 
   render() {
-    const formattedSchedule = formatSessionData(this.props.data);
+    const formattedSchedule = formatSessionData(
+      this.props.data
+    );
     console.log(formattedSchedule);
-    return <Schedule data={formattedSchedule} faves={this.props.faves} />;
+    return (
+      <Schedule
+        data={formattedSchedule}
+        faves={this.props.faves}
+      />
+    );
   }
 }
 
@@ -45,4 +64,6 @@ ScheduleContainer.propTypes = {
   data: PropTypes.array
 };
 
-export default connect(mapStateToProps)(ScheduleContainer);
+export default connect(mapStateToProps)(
+  ScheduleContainer
+);

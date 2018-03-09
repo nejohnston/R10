@@ -4,7 +4,7 @@ import MapView, {
 } from "react-native-maps";
 import { StyleSheet } from "react-native";
 
-import { MapPin } from "../../assets/images/map_pin.png";
+// import { MapPin } from "../../assets/images/map_pin.png";
 
 const styles = StyleSheet.create({
   map: {

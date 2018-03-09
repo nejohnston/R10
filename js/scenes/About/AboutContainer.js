@@ -9,6 +9,11 @@ import {
 import About from "./About";
 import styles from "./styles";
 import { fetchAboutInfo } from "../../redux/modules/about";
+import HeaderGradient from "../../components/HeaderGradient";
+import {
+  colors,
+  typography
+} from "../../config/styles";
 
 class AboutContainer extends Component {
   constructor(props) {
@@ -16,7 +21,12 @@ class AboutContainer extends Component {
   }
   static route = {
     navigationBar: {
-      title: "About"
+      title: "About",
+      renderBackground: HeaderGradient,
+      tintColor: colors.white,
+      titleStyle: {
+        fontFamily: typography.fontMain
+      }
     }
   };
   componentDidMount() {

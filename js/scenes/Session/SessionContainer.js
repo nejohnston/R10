@@ -5,6 +5,10 @@ import Session from "./Session";
 import { fetchSpeaker } from "../../redux/modules/speaker";
 import { connect } from "react-redux";
 import HeaderGradient from "../../components/HeaderGradient";
+import {
+  colors,
+  typography
+} from "../../config/styles";
 
 class SessionContainer extends Component {
   constructor(props) {
@@ -13,13 +17,19 @@ class SessionContainer extends Component {
 
   static route = {
     navigationBar: {
-      title: "Session"
-      // renderBackground: () => <HeaderGradient />
+      title: "Session",
+      tintColor: colors.white,
+      renderBackground: HeaderGradient,
+      titleStyle: {
+        fontFamily: typography.fontMain
+      }
     }
   };
 
   componentDidMount() {
-    this.props.dispatch(fetchSpeaker(this.props.route.params.data));
+    this.props.dispatch(
+      fetchSpeaker(this.props.route.params.data)
+    );
   }
 
   render() {
@@ -55,4 +65,6 @@ SessionContainer.propTypes = {
 //   };
 // };
 
-export default connect(mapStateToProps)(SessionContainer);
+export default connect(mapStateToProps)(
+  SessionContainer
+);

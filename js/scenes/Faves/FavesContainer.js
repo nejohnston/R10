@@ -5,6 +5,10 @@ import { getRealmFaves } from "../../redux/modules/faves";
 import { formatAndFilterFaves } from "../../config/helpers";
 import Faves from "./Faves";
 import HeaderGradient from "../../components/HeaderGradient";
+import {
+  colors,
+  typography
+} from "../../config/styles";
 
 class FavesContainer extends Component {
   constructor(props) {
@@ -13,19 +17,31 @@ class FavesContainer extends Component {
 
   static route = {
     navigationBar: {
-      title: "Faves"
+      title: "Faves",
+      tintColor: colors.white,
+      renderBackground: HeaderGradient,
+      titleStyle: {
+        fontFamily: typography.fontMain
+      }
     }
   };
 
   componentDidMount() {
-    this.props.dispatch(getRealmFaves(this.props.data));
+    this.props.dispatch(
+      getRealmFaves(this.props.data)
+    );
   }
 
   render() {
     const { faves, data } = this.props;
-    const faveSessions = formatAndFilterFaves(faves, data);
+    const faveSessions = formatAndFilterFaves(
+      faves,
+      data
+    );
 
-    return <Faves faves={faves} data={faveSessions} />;
+    return (
+      <Faves faves={faves} data={faveSessions} />
+    );
   }
 }
 
@@ -42,4 +58,6 @@ FavesContainer.propTypes = {
   data: PropTypes.array
 };
 
-export default connect(mapStateToProps)(FavesContainer);
+export default connect(mapStateToProps)(
+  FavesContainer
+);
