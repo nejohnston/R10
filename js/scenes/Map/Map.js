@@ -7,7 +7,7 @@ import MapView, {
 import { StyleSheet, Text } from "react-native";
 
 import {
-  locationCoordinates,
+  markers,
   region
 } from "../../config/locationCoordinates";
 
@@ -23,45 +23,21 @@ const styles = StyleSheet.create({
   }
 });
 
-const markerLocation = {
-  latitude: 49.263348,
-  longitude: -123.138128,
-  latitudeDelta: 0.0922,
-  longitudeDelta: 0.0421
-};
-
-// const markers: [
-//   {
-//     coordinate: {
-//       latitude: ,
-//       longitude: ,
-//     },
-//   },
-//   {location: 'Main Hall',
-//     coordinate: {
-//       latitude: LATITUDE,
-//       longitude: LONGITUDE,
-//     },
-//   },
-//   {
-//     coordinate: {
-//       latitude: LATITUDE + SPACE,
-//       longitude: LONGITUDE - SPACE,
-//     },
-//   },
-// ],
-
 const Map = ({ data }) => {
+  const markerLocation = region;
+  // const location = data.location;
+  console.log(markers);
   return (
     <MapView
       style={styles.map}
       initialRegion={markerLocation}
     >
+      {/* {markers.map(marker => ( */}
       <Marker
         coordinate={markerLocation}
         image={require("../../assets/images/map_pin.png")}
-        onPress={e => console.log(e.nativeEvent)}
       />
+      {/* ))} */}
       <Callout tooltip={true}>
         <Text>hey</Text>
       </Callout>

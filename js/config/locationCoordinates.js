@@ -16,15 +16,12 @@ export const markers = [
   {
     location: "West Wing",
     latlng: {
-      latitude: 49.263348,
-      longitude: -123.138128
+      latitude: 49.2674,
+      longitude: -123.2529
     }
   },
   {
     location: "Atrium",
-    latlng: {
-      latitude: 49.263348,
-      longitude: -123.138128
-    }
+    latlng: { latitude: 49.2883, longitude: -123.1121 }
   }
 ];

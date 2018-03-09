@@ -40,7 +40,6 @@ class ScheduleContainer extends Component {
     const formattedSchedule = formatSessionData(
       this.props.data
     );
-    console.log(formattedSchedule);
     return (
       <Schedule
         data={formattedSchedule}

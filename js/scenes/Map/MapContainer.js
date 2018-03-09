@@ -32,12 +32,12 @@ class MapContainer extends Component {
   }
 }
 
-// const mapStateToProps = state => ({
-//   data: state.schedule.data
-// });
+const mapStateToProps = state => ({
+  data: state.schedule.data
+});
 
 MapContainer.propTypes = {
   data: PropTypes.array
 };
 
-export default MapContainer;
+export default connect(mapStateToProps)(MapContainer);
