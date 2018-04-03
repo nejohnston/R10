@@ -71,5 +71,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* **Mackenzie Kieran**(https://github.com/10thfloor) - *Built Template* - [RED Academy Instructor](https://github.com/redacademy)
-* **Mandi Wise**(https://github.com/mandiwise) - *Built Template* - [RED Academy Instructor](https://github.com/redacademy)
+* [**Mackenzie Kieran**](https://github.com/10thfloor) - *Built Template* - [RED Academy Instructor](https://github.com/redacademy)
+* [**Mandi Wise**](https://github.com/mandiwise) - *Built Template* - [RED Academy Instructor](https://github.com/redacademy)
