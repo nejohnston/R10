@@ -63,7 +63,7 @@ Once built press the *play* button in the top left area of Xcode, I would recomm
 
 ## Authors
 
-* **Nicholas Johnston** - *Executioner* - [RedAcademy Instructor](https://github.com/redacademy)
+* **Nicholas Johnston** - *Executioner* - [GitHub Profile](https://github.com/nejohnston)
 
 ## License
 
